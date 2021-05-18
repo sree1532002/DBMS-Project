@@ -1,0 +1,385 @@
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .navbar-brand {
+    font-family: "Dancing Script", cursive;
+    color: #c59d5f !important;
+    font-size: 30px;
+    font-weight: 870 !important;
+  }
+  
+  .logo {
+    width: 80px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar-expand-sm {
+    justify-content: flex-end !important;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .nav-link {
+    color: #1a1c20 !important;
+    font-size: 18px;
+    font-weight: 570;
+    font-family: "Nunito", sans-serif;
+  }
+  .nav-item {
+    padding-right: 15px;
+  }
+  a:hover {
+    color: #c59d5f !important;
+  }
+  a:visited {
+    text-decoration: underline !important;
+    text-decoration-color: #1a1c20;
+  }
+  .headerimg {
+    background-image: url("./images/headerimg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 555px;
+    width: 100%;
+    padding: 0 0 !important;
+  }
+  .frostedglass {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0rem 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .welcome {
+    font-family: "Dancing Script", cursive;
+    font-size: 120px;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+  }
+  .hmb {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 570;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    margin-top: -5px;
+  }
+  
+  #about {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .flexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .discover {
+    font-family: "Dancing Script", cursive;
+    font-size: 100px;
+    font-weight: 800;
+    color: #c59d5f;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .ourstory {
+    color: #1a1c20;
+    font-size: 48px;
+    font-weight: 570;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    margin-top: -50px;
+  }
+  
+  .fimg {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .vcol {
+    height: fit-content;
+  }
+  .snowflake {
+    text-align: center;
+  }
+  .legacy {
+    color: #1a1c20;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  .menu {
+    padding: 30px 20px;
+    background-color: rgb(236, 233, 233);
+  }
+  
+  .menulink {
+    text-align: center;
+  }
+  .menulink > a {
+    color: #c59d5f;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+  }
+  .menulink > a:hover {
+    text-decoration: underline;
+    text-decoration-color: #c59d5f;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-gap: 30px;
+    padding-left: 30px;
+  }
+  
+  .menuCon {
+    padding: 0 30px;
+    margin-bottom: 100px;
+  }
+  
+  .fgrid {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .fimg2 {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .reservation {
+    padding: 30px 20px;
+    padding-right: 30px;
+  }
+  .footer {
+    background-color: #c59d5f;
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px 20px;
+  }
+  .resCon {
+    margin-bottom: 100px;
+  }
+  
+  .con {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+  
+  .wh {
+    text-align: right;
+  }
+  .workinghours {
+    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 800;
+    color: #efeff0;
+  }
+  .timings {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Nunito", sans-serif;
+  }
+  .icons {
+    display: inline;
+    float: left;
+    padding-top: 20px;
+  }
+  .contact {
+    font-family: "Dancing Script", cursive;
+    font-size: 50px;
+    font-weight: 800;
+    color: #f5f5f5;
+    text-align: left;
+  }
+  
+  .moreicons {
+    text-align: left;
+  }
+  
+  .text {
+    color: #ffffff;
+    font-size: 20px;
+  }
+  
+  .fa-2x {
+    color: #efeff0;
+  }
+  
+  /* CSS for menu page */
+  .back {
+    text-align: right;
+  }
+  .menuimg {
+    background-image: url("./images/menu.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 555px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  .dmenu {
+    font-family: "Dancing Script", cursive;
+    font-size: 120px;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+  }
+  .titletext {
+    font-family: "Dancing Script", cursive;
+    font-size: 60px;
+    font-weight: 800;
+    color: #c59d5f;
+    text-align: center;
+    padding: 20px;
+  }
+  .description {
+    color: #1a1c20;
+    font-size: 29px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  .desc {
+    background-color: #ffffff;
+  }
+  .southind {
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    font-weight: 800;
+    color: #c59d5f;
+    text-align: left;
+    padding-left: 30px;
+  }
+  .line {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    border: 0.5px solid #1a1c20;
+  }
+  .sfood {
+    color: #1a1c20;
+    font-size: 29px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+  }
+  .price {
+    color: #1a1c20;
+    font-size: 29px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    list-style-type: none;
+    margin-right: 27px;
+  }
+  .div-right {
+    float: right;
+    margin-left: -10px;
+  }
+  .div-left {
+    float: left;
+  }
+  
+  /*Media Queries*/
+  @media (max-width: 500px) {
+    .welcome {
+      font-size: 17vw;
+    }
+  
+    .hmb {
+      font-size: 10vw;
+      line-height: 1;
+    }
+    .dmenu {
+      font-size: 17vw !important;
+    }
+    .titletext {
+      font-size: 10vw !important;
+    }
+    .description {
+      font-size: 5vw !important;
+    }
+    .sfood,
+    .price {
+      font-size: 5vw !important;
+    }
+    .southind {
+      font-size: 8vw !important;
+    }
+    .navbar-brand {
+      font-size: 5vw !important;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .fimg {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  
+    #about {
+      padding: 0 30px;
+    }
+  
+    .menuCon,
+    .resCon {
+      margin: 0;
+    }
+  
+    .resCon {
+      margin-bottom: 10px;
+    }
+  
+    .fimg2 {
+      padding: 20px;
+      padding-top: 30px;
+      padding-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .contact,
+    .workinghours {
+      font-size: 8vw;
+    }
+  
+    .moreicons {
+      font-size: 16px;
+    }
+  
+    .timings {
+      font-size: 16px;
+    }
+  }
+  

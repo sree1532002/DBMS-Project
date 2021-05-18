@@ -1,0 +1,73 @@
+body{
+    background-image: url("Images/Loginimg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    height: 100%;
+    width: 100%;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+.home {
+    border-radius: 5px;
+    width: 32%;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    background-color: #ffffff;
+}
+.home1 {
+    border-radius: 5px;
+    width: 32%;
+   margin-top: -35px!important;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+}
+.form-check{
+    padding-left: 50px;
+}
+.form-group{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.form-group, .pw {
+    padding-top: 20px;
+}
+.form-control:focus{
+    box-shadow: 0 0 0 0.2rem rgba(163, 61, 247, 0.25);
+}
+.logbtn{
+    padding-left: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.btn-primary{
+    background-color: #8684bb;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-color:#ffffff ;
+    height: 50px;
+}
+.btn-primary:hover{
+    background-color: #504d9c;
+    border-color:#ffffff
+}
+.btn-primary:active{
+    background-color: #b8b5ff;
+    border-color:#ffffff
+}
+.logtxt{
+    text-align: center;
+    font-size: 45px;
+    font-weight: 500;
+    padding-top: 20px;
+    color: #757272;
+}
+.signtxt{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 450;
+    color: #757272;
+    padding-bottom: 30px;
+}

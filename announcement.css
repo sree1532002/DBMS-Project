@@ -1,0 +1,155 @@
+ body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .menu {
+    padding: 30px 20px;
+    background-color: rgb(255, 255, 255);
+  }
+  #item:link, #item:visited {
+       
+    color: #0c0c0c;
+    padding: 14px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  #item{
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  #item:hover, #item:active {
+    background-color: #b8b5ff;
+    color: #7868e6;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .menulink {
+    text-align: center;
+  }
+  .menulink > a {
+    color: #c59d5f;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Nunito", sans-serif;
+    text-align: center;
+  }
+  .menulink > a:hover {
+    text-decoration: underline;
+    text-decoration-color: #c59d5f;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-gap: 30px;
+    padding-left: 30px;
+  }
+  
+  .menuCon {
+    padding: 0 30px;
+    margin-bottom: 100px;
+  }
+  .fgrid {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .discover{
+    text-align: left;
+    font-size: 45px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #1c1c1d;
+    font-family: "Dancing Script", cursive;
+  }
+  .subtext{
+    color: #1a1c20;
+    font-size: 29px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    text-align: left;
+  }
+  .card {
+    border: none!important;
+    margin-top: 20px!important;
+}
+.card-title{
+    color: #1a1c20;
+    font-size: 29px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    text-align: left;
+    padding-top: 20px;
+}
+.card-text{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    color: #525252;
+}
+.col-md-4 {
+    padding: 20px!important;
+}
+
+.card-body{
+    padding: 10px;
+}
+.input-group{
+    padding-right: 20px!important;
+}
+.logbtn {
+    background-color: #b8b5ff;
+    color:#1c1c1d;
+    border-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 3px!important;
+}
+.btn:hover{
+    background-color: #b8b5ff;
+}
+.addbtn {
+    border-left: 0px;
+}
+.addbtn.btn.btn-primary {
+    border-right: 0px;
+    background-color: #b8b5ff;
+    border-color: white;
+    color:black;
+    font-weight: 600;
+}
+
+.card-header {
+    background-color:#ffebf4;
+    color: #1c1c1d;
+    font-size: 20px;
+    font-weight: 600;
+}
+.ideasd {
+    padding-left: 0px;
+}
+.idea {
+    padding-left: 0px;
+}
+.ideatxt{
+    width: 100%;
+}
+.join1.btn.btn-primary {
+    padding: 5 20px;
+    background-color: #b8b5ff;
+    color:#1c1c1d;
+    border-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 3px!important;
+}
+
+  
+  
+  

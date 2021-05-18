@@ -1,0 +1,141 @@
+.welcome {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 400;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #1c1c1d;
+    background-color: #fff0f2;
+}
+.about{
+padding: 30px;
+font-size: x-large;
+}
+#p.align-right ul li{
+    position: relative;
+    float: right;
+}
+#alignnav{
+    position:fixed;
+}
+#item{
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#item:link, #item:visited {
+       
+    color: #0c0c0c;
+    padding: 14px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+#item:hover, #item:active {
+    background-color: #b8b5ff;
+    color: #6651f0;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #b8b5ff;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  #myBtn:hover {
+    background-color: #1e212d;
+  }
+.card {
+    border: none!important;
+    margin-top: 20px!important;
+}
+.card-title{
+    text-align: left;
+    font-size: 45px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #1c1c1d;
+    font-family: "Dancing Script", cursive;
+}
+.card-title1{
+    color: #1a1c20;
+    font-size: 29px;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif;
+    text-align: left;
+}
+.card-text{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    color: #525252;
+}
+.col-md-4 {
+    padding: 20px!important;
+}
+
+.card-body{
+    padding: 10px;
+}
+.input-group{
+    padding-right: 20px!important;
+}
+.logbtn {
+    background-color: #b8b5ff;
+    color:#1c1c1d;
+    border-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 3px!important;
+}
+.btn:hover{
+    background-color: #b8b5ff;
+}
+.addbtn {
+    border-left: 0px;
+}
+.addbtn.btn.btn-primary {
+    border-right: 0px;
+    background-color: #b8b5ff;
+    border-color: white;
+    color:black;
+    font-weight: 600;
+}
+
+.card-header {
+    background-color:#ebb2ca;
+    color: #1c1c1d;
+    font-size: 20px;
+    font-weight: 600;
+}
+.ideasd {
+    padding-left: 0px;
+}
+.idea {
+    padding-left: 0px;
+}
+.ideatxt{
+    width: 100%;
+}
+.join1.btn.btn-primary {
+    padding: 5 20px;
+    background-color: #b8b5ff;
+    color:#1c1c1d;
+    border-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 3px!important;
+}
