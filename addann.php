@@ -2,9 +2,15 @@
 if(isset($_POST['addann'])){
     session_start();
     include('db.php');
-    $feeddata = $con->real_escape_string($_POST['feeddata']);
-    $feeddata = stripcslashes($feeddata);
-    $sql = "INSERT INTO announcements (events) VALUES ('$feeddata')";
+    $clubid = $con->real_escape_string($_POST['clubid']);
+    $events = $con->real_escape_string($_POST['events']);
+    $date = $con->real_escape_string($_POST['date']);
+
+    $clubid = stripcslashes($clubid);
+    $events = stripcslashes($events);
+    $date = stripcslashes($date);
+
+    $sql = "INSERT INTO announcements (club_id,events,dates) VALUES ('$clubid','$events','$date')";
     if(mysqli_query($con, $sql)){
         echo "<script>";
         echo "alert('Announcement added');";

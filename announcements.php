@@ -99,20 +99,21 @@ $result = mysqli_query($con,$sql);
           <div class="input-group mb-3">
             <form action = "addann.php" method = "post" class = "ideatxt">
               <div class="input-group-append idea">
-                <input type="text" name = "feeddata" class="form-control" name = 'idea' placeholder="Add" aria-label="Recipient's idea" aria-describedby="basic-addon2">
+                <input type="text" name = "events" class="form-control" name = 'events' placeholder="Post" aria-label="Recipient's idea" aria-describedby="basic-addon2" required>
                 <button type="submit" class="logbtn addbtn btn btn-primary" name = "addann">Post</button>  
               </div>
         
               <div class="input-group-append">
                   <input type = "hidden" name = "rollno" value ="<?php echo $rollno;?>">
-                  <label for="cars">Choose a car:</label>
-                    <select name="cars" id="cars">
+                  <label for="clubid">Choose the club name</label>
+                    <select name="clubid" id="clubid" required>
+                        <option value="0">General</option>
                         <option value="1">Astro Club</option>
                         <option value="2">Computer Club</option>
                         <option value="3">Photography Club</option>
                         <option value="4">Cultural Club</option>
                    </select>
-                  <input type = "hidden" name = "clubno" value ="1">
+                   <input type="datetime-local"  class="float-right" id="date" placeholder="Enter date&time of the event" name="date" required>
               </div>
             </form>
           </div>

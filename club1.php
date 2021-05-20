@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include 'db.php';
-$uname = $_SESSION['uname'];
+$rollno = $_SESSION['rollno'];
 $sql = "SELECT idea FROM club1";
 $_SESSION['clubno'] = 1;
 $result = mysqli_query($con,$sql);
