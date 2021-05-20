@@ -88,7 +88,7 @@
         <a href="club1.php">Astro Club</a>
       </p>
       <p>
-        <a href="club2.php">Computers Club</a>
+        <a href="club2.php">Computer Club</a>
       </p>
       <p>
         <a href="club3.php">Photography club</a>

@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "codher";
+$database = "clubmanagement";
 
 $con = new mysqli($host, $user, $password, $database);
 

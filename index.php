@@ -25,7 +25,7 @@
                 <div class = "logtxt">Login</div>
                 <div class="form-group">
                     <!--<label for="exampleInputEmail1">We need your Username!</label>-->
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" name = "uname" required>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" name = "rollno" required>
                 </div>
                 <div class="form-group pw">
                     <!--<label for="exampleInputPassword1">And Password (Dw, it's safe with us!)</label>-->

@@ -4,7 +4,6 @@ include 'db.php';
 $uname = $_SESSION['uname'];
 $sql = "SELECT feed FROM ann";
 $result = mysqli_query($con,$sql);
-
 ?>
 <!doctype html>
 <html lang="en">
