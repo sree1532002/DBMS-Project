@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2021 at 06:36 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Generation Time: May 20, 2021 at 07:01 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -52,8 +53,7 @@ INSERT INTO `admin` (`roll_no`, `pword`, `club_id`, `contact`) VALUES
 
 CREATE TABLE `announcements` (
   `club_id` varchar(10) DEFAULT NULL,
-  `events` text DEFAULT NULL,
-  `dates` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `events` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -96,6 +96,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`roll_no`, `pword`) VALUES
+('2019103585', 'ratcha'),
 ('2019103585', 'ratcha');
 
 -- --------------------------------------------------------
