@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2021 at 05:33 PM
+-- Generation Time: May 20, 2021 at 06:36 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -34,6 +34,16 @@ CREATE TABLE `admin` (
   `contact` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`roll_no`, `pword`, `club_id`, `contact`) VALUES
+('2017103001', 'club1', '1', 'club1@gmail.com'),
+('2017103002', 'club2', '2', 'club2@gmail.com'),
+('2017103003', 'club3', '3', 'club3@gmail.com'),
+('2017103004', 'club4', '4', 'club4@gmail.com');
+
 -- --------------------------------------------------------
 
 --
@@ -60,6 +70,16 @@ CREATE TABLE `clubs` (
   `t_contact` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `clubs`
+--
+
+INSERT INTO `clubs` (`club_id`, `club_name`, `president`, `incharge`, `t_contact`) VALUES
+('1', 'Astro Club', '2017103001', 'Vellammal BL', '9876987667'),
+('2', 'Computer club', '2017103002', 'Shanmugapriya E', '9876987669'),
+('3', 'Photography Club', '2017103003', 'Sanju', '8765876545'),
+('4', 'Cultural Club', '2017103004', 'Suganthini', '9876987661');
+
 -- --------------------------------------------------------
 
 --
@@ -70,6 +90,13 @@ CREATE TABLE `login` (
   `roll_no` varchar(20) DEFAULT NULL,
   `pword` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`roll_no`, `pword`) VALUES
+('2019103585', 'ratcha');
 
 -- --------------------------------------------------------
 
@@ -100,6 +127,13 @@ CREATE TABLE `signup` (
   `pword` varchar(20) DEFAULT NULL,
   `phone` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `signup`
+--
+
+INSERT INTO `signup` (`roll_no`, `name`, `year`, `dept`, `email`, `pword`, `phone`) VALUES
+('2019103585', 'Sreeratcha', 2, 'CSE', 'r@gmail.com', 'ratcha', '9445644788');
 
 -- --------------------------------------------------------
 
