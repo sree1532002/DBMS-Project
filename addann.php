@@ -4,7 +4,7 @@ if(isset($_POST['addann'])){
     include('db.php');
     $feeddata = $con->real_escape_string($_POST['feeddata']);
     $feeddata = stripcslashes($feeddata);
-    $sql = "INSERT INTO ann (feed) VALUES ('$feeddata')";
+    $sql = "INSERT INTO announcements (events) VALUES ('$feeddata')";
     if(mysqli_query($con, $sql)){
         echo "<script>";
         echo "alert('Announcement added');";

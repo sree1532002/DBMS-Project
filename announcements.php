@@ -1,8 +1,8 @@
 <?php 
 session_start();
 include 'db.php';
-$uname = $_SESSION['uname'];
-$sql = "SELECT feed FROM ann";
+$rollno = $_SESSION['rollno'];
+$sql = "SELECT events FROM announcements";
 $result = mysqli_query($con,$sql);
 ?>
 <!doctype html>
@@ -104,7 +104,14 @@ $result = mysqli_query($con,$sql);
               </div>
         
               <div class="input-group-append">
-                  <input type = "hidden" name = "uname" value ="<?php echo $uname;?>">
+                  <input type = "hidden" name = "rollno" value ="<?php echo $rollno;?>">
+                  <label for="cars">Choose a car:</label>
+                    <select name="cars" id="cars">
+                        <option value="1">Astro Club</option>
+                        <option value="2">Computer Club</option>
+                        <option value="3">Photography Club</option>
+                        <option value="4">Cultural Club</option>
+                   </select>
                   <input type = "hidden" name = "clubno" value ="1">
               </div>
             </form>
@@ -116,7 +123,7 @@ $result = mysqli_query($con,$sql);
               <?php
                 while($row = mysqli_fetch_assoc($result)){
               ?>
-              <li class  ="list-group-item"><?php echo $row['feed'];?></li>
+              <li class  ="list-group-item"><?php echo $row['events'];?></li>
               <?php } ?>
             </ul>
           </div>
