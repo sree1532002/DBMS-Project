@@ -6,7 +6,7 @@ $_SESSION['clubno'] = $club;
 
 $rollno = $_SESSION['rollno'];
 
-$sql = "SELECT idea FROM ideas where club_id = $club";
+$sql = "SELECT idea FROM ideas where club_id = $club AND visibility = 1";
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
 

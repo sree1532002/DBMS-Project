@@ -8,7 +8,7 @@ $set = 1;
 if(isset($set))
 {
     include "db.php";
-    $query = "SELECT signup.name,ideas.idea,signup.dept,signup.phone,ideas.visibility FROM signup INNER JOIN ideas ON signup.roll_no = ideas.roll_no";
+    $query = "SELECT ideas.id, signup.name,ideas.idea,signup.dept,signup.phone,ideas.visibility FROM signup INNER JOIN ideas ON signup.roll_no = ideas.roll_no";
     $result = mysqli_query($con,$query);
 ?>
 <head>
@@ -19,15 +19,6 @@ if(isset($set))
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <title>Uniclub | Club Admin</title>
-<style>
-.hide{
-    color: red;
-    background-color:black;
-}
-.show{
-    color: green;
-}
-</style>
 </head>
 
 <body>
@@ -56,8 +47,15 @@ if(isset($set))
       <td><?php echo $row['idea'];?></td>
       <td><?php echo $row['dept'];?></td>
       <td><?php echo $row['phone'];?></td>
-      <td><input type="button" id = "visi<?php echo $i;?>" value=" " onclick = "change(<?php echo $row['visibility'];?>,<?php echo $i;?>)"></input></td>
-      <!-- visibility 0 show in green color, visibility 1 hide in red color-->
+       <td><?php if($row['visibility']==1){
+                    echo "<button class=\"btn btn-success\" onclick=\"change(" . $row['id'] .", ".$row['visibility']." )\" >";
+                    echo "Hide";
+                }else{
+                    echo "<button class=\"btn btn-danger\" onclick=\"change(" . $row['id'] .", ".$row['visibility']." )\" >";
+                    echo "Show";
+                }
+            ?></button>
+        </td>
     </form>
     </tr>
     <?php
@@ -71,20 +69,14 @@ if(isset($set))
 </html>
 <?php } ?>
 <script>
-
-function change(vis,id){
-  var num = "visi"+id;
-    if(vis == 1)
-    {
-        document.getElementById(num).style.color = "red";
-        document.getElementById(num).value = "Hide";
-    }
-
-    else
-    {
-        document.getElementById(num).style.color = "green";
-        document.getElementById(num).value = "Show";
-    }        
+function change(id, visibility){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if(this.readyState == 4 && this.status){
+            document.getElementById('message').innerHTML = this.responseText;
+        }
+    };
+    xmlhttp.open('GET', 'visibility.php?id='+id+'&visibility='+visibility, true);
+    xmlhttp.send();
 }
-window.onload = change;
 </script>
