@@ -19,7 +19,6 @@ if(isset($set))
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <title>Uniclub | Club Admin</title>
-</head>
 <style>
 .hide{
     color: red;
@@ -29,6 +28,8 @@ if(isset($set))
     color: green;
 }
 </style>
+</head>
+
 <body>
 <div class="container" style = "border-style: groove;border: 3px solid #495d87;">
   <table class="table table-hover">
@@ -55,7 +56,7 @@ if(isset($set))
       <td><?php echo $row['idea'];?></td>
       <td><?php echo $row['dept'];?></td>
       <td><?php echo $row['phone'];?></td>
-      <td><button id = "visi" onload = "change(<?php echo $row['visibility'];?>)">Change</button></td>
+      <td><input type="button" id = "visi<?php echo $i;?>" value=" " onclick = "change(<?php echo $row['visibility'];?>,<?php echo $i;?>)"></input></td>
       <!-- visibility 0 show in green color, visibility 1 hide in red color-->
     </form>
     </tr>
@@ -70,10 +71,20 @@ if(isset($set))
 </html>
 <?php } ?>
 <script>
-function change(vis){
+
+function change(vis,id){
+  var num = "visi"+id;
     if(vis == 1)
-        document.getElementById('visi').className = "hide";
+    {
+        document.getElementById(num).style.color = "red";
+        document.getElementById(num).value = "Hide";
+    }
+
     else
-        document.getElementById('visi').className = "show";
+    {
+        document.getElementById(num).style.color = "green";
+        document.getElementById(num).value = "Show";
+    }        
 }
+window.onload = change;
 </script>
