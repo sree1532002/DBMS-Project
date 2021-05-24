@@ -72,7 +72,11 @@ if(isset($_SESSION['login'])){
     <div class="card-body">
       <h5 class="card-title">Astro Club</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <a href="club1.php" class="btn btn-primary">Go</a>
+      <form action = "club.php" method = "post">
+      <!--<a href="club.php" class="btn btn-primary">Go</a>-->
+      <input type = "hidden" name = "club" value = "1">
+      <button type = "submit" name = "submit" class="btn btn-primary">Go</button>
+      </form>
     </div>
   </div>
   <div class="card">
@@ -80,7 +84,10 @@ if(isset($_SESSION['login'])){
     <div class="card-body">
       <h5 class="card-title">Computers Club</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <a href="club2.php" class="btn btn-primary">Go</a>
+      <form action = "club.php" method = "post">
+      <input type = "hidden" name = "club" value = "2">
+      <button type = "submit" name = "submit" class="btn btn-primary">Go</button>
+      </form>
     </div>
   </div>
   <div class="card">
@@ -88,7 +95,10 @@ if(isset($_SESSION['login'])){
     <div class="card-body">
       <h5 class="card-title">Photography Club</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <a href="club3.php" class="btn btn-primary">Go</a>
+      <form action = "club.php" method = "post">
+      <input type = "hidden" name = "club" value = "3">
+      <button type = "submit" name = "submit" class="btn btn-primary">Go</button>
+      </form>
     </div>
   </div>
 
@@ -97,7 +107,10 @@ if(isset($_SESSION['login'])){
     <div class="card-body">
       <h5 class="card-title">Cultural Club</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <a href="club4.php" class="btn btn-primary">Go</a>
+      <form action = "club.php" method = "post">
+      <input type = "hidden" name = "club" value = "4">
+      <button type = "submit" name = "submit" class="btn btn-primary">Go</button>
+      </form>
     </div>
   </div>
 </div>

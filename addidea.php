@@ -2,17 +2,16 @@
 if(isset($_POST['addidea'])){
     session_start();
     include('db.php');
-    $uname = $con->real_escape_string($_POST['uname']);
-    $uname = stripcslashes($uname);
+    $rollno = $con->real_escape_string($_POST['rollno']);
+    $rollno = stripcslashes($rollno);
     $idea = $con->real_escape_string($_POST['idea']);
     $idea = stripcslashes($idea);
     $clubno = $con->real_escape_string($_POST['clubno']);
-    $loc = 'club'.$clubno.'.php';
-    $sql = "INSERT INTO club$clubno (uname, idea) VALUES ('$uname', '$idea')";
+    $sql = "INSERT INTO ideas (club_id,idea,roll_no) VALUES ('$clubno', '$idea','$rollno')";
     if(mysqli_query($con, $sql)){
         echo "<script>";
-        echo "alert('Idea sent!!');";
-        echo "window.location.href='main.php';";
+        echo "alert('Idea sent!');";
+        echo "window.location.href='club.php';";
         echo "</script>";
         }
         else{

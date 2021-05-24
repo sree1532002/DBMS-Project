@@ -3,17 +3,14 @@
 <head><link rel="icon" href="images/logo.jpeg" type="image/icon type"></head>
 <?php
 session_start();
-if(isset($_SESSION["uname"]))
+//$club = $_SESSION['club'];
+$club = 1;
+$set = 1;
+if(isset($set))
 {
     include "db.php";
-    $query = "SELECT * FROM club1";
+    $query = "SELECT * FROM announcements";
     $result = mysqli_query($con,$query);
-    $query1 = "SELECT * FROM club2";
-    $result1 = mysqli_query($con,$query1);
-    $query2 = "SELECT * FROM club3";
-    $result2 = mysqli_query($con,$query2);
-    $query3 = "SELECT * FROM club4";
-    $result3 = mysqli_query($con,$query3);
 ?>
 <head>
 <link rel="icon" href="favicon.ico" type="image/icon type">
@@ -21,21 +18,98 @@ if(isset($_SESSION["uname"]))
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <title>Uniclub | Club Admin</title>
 </head>
 <body>
-    <h1 style ="text-align:center">Astro club</h1>
+    <h1 style ="text-align:center">Announcements</h1>
+    <div class="container">
+  
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add announcement</h4>
+        </div>
+        <div class="modal-body">
+        <form>
+              <div class="input-group-append idea">
+                <input type="text" name = "events" class="form-control" id = 'events' placeholder="Enter the announcement" aria-label="Recipient's idea" aria-describedby="basic-addon2" required>
+              </div>
+              <div class="input-group-append">
+                  <label for="clubid">Choose the club name</label>
+                    <select name="clubid" id="clubid" required>
+                        <option value="0">General</option>
+                        <option value="1">Astro Club</option>
+                        <option value="2">Computer Club</option>
+                        <option value="3">Photography Club</option>
+                        <option value="4">Cultural Club</option>
+                   </select>
+                   <input type="datetime-local"  class="float-right" id="date" placeholder="Enter date&time of the event" name="date" required>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-success" value = "Add" onclick = "add()">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Add Club</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add club</h4>
+        </div>
+        <div class="modal-body">
+        <form action = "addclub.php" method="post" enctype="multipart/form-data">
+              <div class="input-group-append idea">
+              <input type = "text" placeholder = "Club ID" name = "clubid"><br>
+              <input type = "text" placeholder = "Club name" name = "clubname"><br>
+              <input type = "text" placeholder = "President Roll number" name = "president"><br>
+              <input type = "text" placeholder = "Incharge name" name = "incharge"><br>
+              <input type = "text" placeholder = "Contact number" name = "contact"><br>
+              <input type = "text" placeholder = "Heading" name = "heading"><br>
+              <input type = "text" placeholder = "Description" name = "description"><br>
+              <input type = "file" id = "image" name = "image">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-success" value = "Add">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 <div class="container" style = "border-style: groove;border: 3px solid #495d87;">
   <table class="table table-hover">
   <thead>
   <br>
     <tr>
     <th>S.No.</th>
-      <th>Username</th>
-      <th>Interested</th>
-      <th>Member</th>
-      <th>Idea</th>
+      <th>Club Id</th>
+      <th>Events</th>
+      <th>Dates</th>
     </tr>
   </thead>
   <tbody>
@@ -45,16 +119,14 @@ if(isset($_SESSION["uname"]))
     ?>
     <tr>
     <td><?php echo $i;?></td>
-      <td><?php echo $row['uname'];?></td>
-      <td><?php echo $row['interested'];?></td>
-      <td><?php echo $row['member'];?></td>
-      <td><?php echo $row['idea'];?></td>
-      <td>
-          <form action = "update.php" method = "post">
-                <input type = "hidden" name = "uname" value ="<?php echo $row['uname'];?>">
-                <input type = "hidden" name = "clubno" value ="1">
-                <td><button type="submit" class="btn btn-primary" name = "update">Accept invitation</button></td>
-          </form>
+    <form>
+      <input type = "hidden" id = "id" value = "<?php echo $row['id'];?>">
+      <td><input type = "text" id = "club_id<?php echo $row['id'];?>" value = "<?php echo $row['club_id'];?>"></td>
+      <td><input type = "text" id = "events<?php echo $row['id'];?>" value = "<?php echo $row['events'];?>"></td>
+      <td><input type = "text" id = "dates<?php echo $row['id'];?>" value = "<?php echo $row['dates'];?>"></td>
+      <td><input type="button" class="btn btn-primary" value = "Update" onclick = "update(<?php echo $row['id'];?>)"></td>
+      <td><input type="button" class="btn btn-danger" value = "Delete" onclick = "del(<?php echo $row['id'];?>)"></td>
+    </form>
     </tr>
     <?php
     $i++;
@@ -62,122 +134,7 @@ if(isset($_SESSION["uname"]))
     ?>
   </tbody>
 </table>
-</div>
-<h1 style ="text-align:center">Computer club</h1>
-<div class="container" style = "border-style: groove;border: 3px solid #495d87;">
-  <table class="table table-hover">
-  <thead>
-  <br>
-    <tr>
-    <th>S.No.</th>
-      <th>Username</th>
-      <th>Interested</th>
-      <th>Member</th>
-      <th>Idea</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-  $i = 1;
-    while($row = mysqli_fetch_assoc($result1)){
-    ?>
-    <tr>
-    <td><?php echo $i;?></td>
-      <td><?php echo $row['uname'];?></td>
-      <td><?php echo $row['interested'];?></td>
-      <td><?php echo $row['member'];?></td>
-      <td><?php echo $row['idea'];?></td>
-      <td>
-          <form action = "update.php" method = "post">
-                <input type = "hidden" name = "uname" value ="<?php echo $row['uname'];?>">
-                <input type = "hidden" name = "clubno" value ="1">
-                <td><button type="submit" class="btn btn-primary" name = "update">Accept invitation</button></td>
-          </form>
-    </tr>
-    <?php
-    $i++;
-    }
-    ?>
-  </tbody>
-</table>
-</div>
-<h1 style ="text-align:center">Photography club</h1>
-<div class="container" style = "border-style: groove;border: 3px solid #495d87;">
-  <table class="table table-hover">
-  <thead>
-  <br>
-    <tr>
-    <th>S.No.</th>
-      <th>Username</th>
-      <th>Interested</th>
-      <th>Member</th>
-      <th>Idea</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-  $i = 1;
-    while($row = mysqli_fetch_assoc($result2)){
-    ?>
-    <tr>
-    <td><?php echo $i;?></td>
-      <td><?php echo $row['uname'];?></td>
-      <td><?php echo $row['interested'];?></td>
-      <td><?php echo $row['member'];?></td>
-      <td><?php echo $row['idea'];?></td>
-      <td>
-          <form action = "update.php" method = "post">
-                <input type = "hidden" name = "uname" value ="<?php echo $row['uname'];?>">
-                <input type = "hidden" name = "clubno" value ="1">
-                <td><button type="submit" class="btn btn-primary" name = "update">Accept invitation</button></td>
-          </form>
-    </tr>
-    <?php
-    $i++;
-    }
-    ?>
-  </tbody>
-</table>
-</div>
-<h1 style ="text-align:center">Cultural club</h1>
-<div class="container" style = "border-style: groove;border: 3px solid #495d87;">
-  <table class="table table-hover">
-  <thead>
-  <br>
-    <tr>
-    <th>S.No.</th>
-      <th>Username</th>
-      <th>Interested</th>
-      <th>Member</th>
-      <th>Idea</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-  $i = 1;
-    while($row = mysqli_fetch_assoc($result3)){
-    ?>
-    <tr>
-    <td><?php echo $i;?></td>
-      <td><?php echo $row['uname'];?></td>
-      <td><?php echo $row['interested'];?></td>
-      <td><?php echo $row['member'];?></td>
-      <td><?php echo $row['idea'];?></td>
-      <td>
-          <form action = "update.php" method = "post">
-                <input type = "hidden" name = "uname" value ="<?php echo $row['uname'];?>">
-                <input type = "hidden" name = "clubno" value ="1">
-                <td><button type="submit" class="btn btn-primary" name = "update">Accept invitation</button></td>
-          </form>
-    </tr>
-    <?php
-    $i++;
-    }
-    ?>
-  </tbody>
-</table>
-</div>
-<br><br>
+
 </body>
 </html>
 
@@ -192,3 +149,72 @@ else
     echo "</script>";
 
 }?>
+<script>
+function update(id){
+    var club_id = $("#club_id"+id).val();
+    var events = $("#events"+id).val();
+    var dates = $("#dates"+id).val();
+    
+    $.ajax({
+    type: "POST",
+    url: "change.php",
+    data: {
+    id: id,
+    club_id: club_id,
+    events: events,
+    dates: dates,
+    up:1
+    },
+    cache: false,
+    success: function(data) {
+    alert(data);
+    },
+    error: function(xhr, status, error) {
+    console.error(xhr);
+    }
+    });
+    location.reload();
+    }
+function del(id){
+    $.ajax({
+    type: "POST",
+    url: "change.php",
+    data: {
+    id: id,
+    del:1
+    },
+    cache: false,
+    success: function(data) {
+    alert(data);
+    },
+    error: function(xhr, status, error) {
+    console.error(xhr);
+    }
+    });
+    location.reload();
+}
+function add(){
+    var club_id = $("#clubid").val();
+    var events = $("#events").val();
+    var dates = $("#date").val();
+    $.ajax({
+    type: "POST",
+    url: "change.php",
+    data: {
+    club_id: club_id,
+    events: events,
+    dates: dates,
+    add:1
+    },
+    cache: false,
+    success: function(data) {
+    alert(data);
+    },
+    error: function(xhr, status, error) {
+    console.error(xhr);
+    }
+    });
+    location.reload();
+}
+</script>
+
