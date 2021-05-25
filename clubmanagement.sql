@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2021 at 04:24 PM
+-- Generation Time: May 25, 2021 at 08:24 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -68,8 +68,8 @@ INSERT INTO `announcements` (`id`, `club_id`, `events`, `dates`) VALUES
 (6, '2', 'Come to tag audi at 3pm', '2021-05-06 10:52:00'),
 (9, '0', 'Assemble at vivek audiiiii', '2021-05-24 10:53:00'),
 (10, '0', 'added for testingggg', '2021-05-24 10:55:00'),
-(11, '1', 'Assemble at road', '2021-05-24 10:56:00'),
-(16, '0', 'Come to tag audi at 9am', '2021-05-14 11:02:00');
+(16, '0', 'Come to tag audi at 9am', '2021-05-14 11:02:00'),
+(17, '3', 'hey', '2021-05-14 05:22:00');
 
 -- --------------------------------------------------------
 
@@ -142,12 +142,12 @@ CREATE TABLE `ideas` (
 --
 
 INSERT INTO `ideas` (`id`, `club_id`, `idea`, `roll_no`, `visibility`) VALUES
-(1, '1', 'Moon watch shows can be conducted', '2019103585', 0),
-(2, '1', 'Planetorium visit', '2019103585', 1),
-(3, '1', 'Planetorium visit can be conducted', '2019103585', 0),
+(1, '1', 'Moon watch shows can be conducted', '2019103585', 1),
+(2, '1', 'Planetorium visit', '2019103585', 0),
+(3, '1', 'Planetorium visit can be conducted', '2019103585', 1),
 (4, '1', 'Website comp', '2019103585', 1),
-(5, '2', 'Website competition', '2019103585', 0),
-(6, '1', 'Moon watch shows can be conducted..........', '2019103585', 0);
+(5, '2', 'Website competition', '2019103585', 1),
+(6, '1', 'Moon watch shows can be conducted..........', '2019103585', 1);
 
 -- --------------------------------------------------------
 
@@ -165,6 +165,9 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`roll_no`, `pword`) VALUES
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
 ('2019103585', 'ratcha'),
 ('2019103585', 'ratcha'),
 ('2019103585', 'ratcha'),
@@ -219,11 +222,20 @@ INSERT INTO `signup` (`roll_no`, `name`, `year`, `dept`, `email`, `pword`, `phon
 --
 
 CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `roll_no` varchar(10) DEFAULT NULL,
   `interested_status` int(11) DEFAULT NULL,
   `club_id` varchar(10) DEFAULT NULL,
   `accepted_status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `roll_no`, `interested_status`, `club_id`, `accepted_status`) VALUES
+(1, '2019103585', 1, '1', NULL),
+(7, '2019103585', 1, '2', NULL);
 
 --
 -- Indexes for dumped tables
@@ -286,6 +298,7 @@ ALTER TABLE `signup`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `roll_no` (`roll_no`),
   ADD KEY `club_id` (`club_id`);
 
@@ -297,13 +310,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `ideas`
 --
 ALTER TABLE `ideas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
