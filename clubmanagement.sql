@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2021 at 08:24 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Generation Time: May 25, 2021 at 09:19 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -226,7 +227,7 @@ CREATE TABLE `users` (
   `roll_no` varchar(10) DEFAULT NULL,
   `interested_status` int(11) DEFAULT NULL,
   `club_id` varchar(10) DEFAULT NULL,
-  `accepted_status` int(11) DEFAULT NULL
+  `accepted_status` tinyint(4) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -234,8 +235,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `roll_no`, `interested_status`, `club_id`, `accepted_status`) VALUES
-(1, '2019103585', 1, '1', NULL),
-(7, '2019103585', 1, '2', NULL);
+(1, '2019103585', 1, '1', 0),
+(7, '2019103585', 1, '2', 1);
 
 --
 -- Indexes for dumped tables
