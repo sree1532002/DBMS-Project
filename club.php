@@ -22,7 +22,7 @@ $row2 = mysqli_fetch_assoc($result2);
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -123,7 +123,11 @@ $row2 = mysqli_fetch_assoc($result2);
           </div>
           <div class = "join">
             <div class = "card-title">Found us interesting? Come be a part of this family!</div>
-            <a href = 'mail_process.php'><button type="submit" class="join1 btn btn-primary" name = "login">Join the club</button></a>
+            <form action = "joinclub.php" method = "post">
+            <input type = "hidden" value = "<?php echo $club?>" name = "club">
+            <input type = "hidden" value = "<?php echo $rollno?>" name = "rollno">
+            <button type="submit" class="join1 btn btn-primary" name = "login">Join the club</button>
+            </form>
           </div>
         </div>
       </div>
