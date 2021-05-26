@@ -11,7 +11,7 @@ if(isset($_POST['addidea'])){
     if(mysqli_query($con, $sql)){
         echo "<script>";
         echo "alert('Idea sent!');";
-        echo "window.location.href='club.php';";
+        echo "window.location.href='main.php';";
         echo "</script>";
         }
         else{

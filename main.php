@@ -1,6 +1,12 @@
 <?php
 session_start();
 if(isset($_SESSION['login'])){
+if($_SESSION['login'] == 2){
+  $admin = 1;
+}
+else{
+  $admin = 0;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +48,15 @@ if(isset($_SESSION['login'])){
           <li class="nav-item">
             <a class="nav-link" id = "item" href="#contact">Contact</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="polling/index.php">Polls</a>
+          </li>
+          <?php 
+          if($admin == 1){?>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="clubadmin.php">Admin</a>
+          </li>
+          <?php } ?>
           <li class="nav-item">
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>

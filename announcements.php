@@ -2,7 +2,7 @@
 session_start();
 include 'db.php';
 $rollno = $_SESSION['rollno'];
-$sql = "SELECT events FROM announcements";
+$sql = "SELECT announcements.events,announcements.dates,clubs.club_name FROM announcements INNER JOIN clubs on clubs.club_id = announcements.club_id";
 $result = mysqli_query($con,$sql);
 ?>
 <!doctype html>
@@ -93,7 +93,7 @@ $result = mysqli_query($con,$sql);
             <div class="discover">Catch the latest news here!</div>
             <div class = "subtext">Here's a single destination to get all the announcements regarding your favourite club activities.</div> 
             <div class = "ideas">
-           
+           <!--
             <div class = "card-title">Post a Message right here!</div>
           </div>
           <div class="input-group mb-3">
@@ -116,7 +116,7 @@ $result = mysqli_query($con,$sql);
                    <input type="datetime-local"  class="float-right" id="date" placeholder="Enter date&time of the event" name="date" required>
               </div>
             </form>
-          </div>
+          </div>-->
           <div class = "card-title">Latest announcements</div>
           <div class="card container-fluid ideasd">
             <ul class="list-group list-group-flush">
@@ -124,12 +124,14 @@ $result = mysqli_query($con,$sql);
               <?php
                 while($row = mysqli_fetch_assoc($result)){
               ?>
-              <li class  ="list-group-item"><?php echo $row['events'];?></li>
+              <li class  ="list-group-item"><?php echo $row['club_name'].":  ";?><?php echo $row['events']."Timings: ";?><?php echo $row['dates'];?></li>
+            
               <?php } ?>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    
+  
 </body>
+</html>

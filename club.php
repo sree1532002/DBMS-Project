@@ -3,7 +3,7 @@ session_start();
 include 'db.php';
 $club = $_POST['club'];
 $_SESSION['clubno'] = $club;
-
+$login = $_SESSION['login'];
 $rollno = $_SESSION['rollno'];
 
 $sql = "SELECT idea FROM ideas where club_id = $club AND visibility = 1";
@@ -13,12 +13,23 @@ $row = mysqli_fetch_assoc($result);
 $sql1 = "SELECT email FROM signup where roll_no = $rollno";
 $result1 = mysqli_query($con,$sql1);
 $row1 = mysqli_fetch_assoc($result1);
-$email = $row1['email'];
-$_SESSION['mail'] = $email;
-
+if($row1 != NULL){
+  $email = $row1['email'];
+  $_SESSION['mail'] = $email;
+}
 $sql2 = "SELECT * FROM club_layout where club_id = $club";
 $result2 = mysqli_query($con,$sql2);
 $row2 = mysqli_fetch_assoc($result2);
+
+$sql3 = "SELECT interested_status FROM users WHERE club_id = '$club' AND roll_no = '$rollno'";
+$result3 = mysqli_query($con, $sql3);
+$row3 = mysqli_fetch_assoc($result3);
+if($row3){
+    $already = 1;
+}
+else{
+  $already = 0;
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -111,6 +122,7 @@ $row2 = mysqli_fetch_assoc($result2);
             </form>
           </div>
           <div class = "card-title1">Here are some ideas posted by enthusiastic members</div>
+        
           <div class="card container-fluid ideasd">
             <ul class="list-group list-group-flush">
             <div class="card-header feature">Featured Ideas</div>
@@ -121,6 +133,8 @@ $row2 = mysqli_fetch_assoc($result2);
               <?php } ?>
             </ul>
           </div>
+
+          <?php if($login == 1 && $already == 0){?>
           <div class = "join">
             <div class = "card-title">Found us interesting? Come be a part of this family!</div>
             <form action = "joinclub.php" method = "post">
@@ -129,6 +143,19 @@ $row2 = mysqli_fetch_assoc($result2);
             <button type="submit" class="join1 btn btn-primary" name = "login">Join the club</button>
             </form>
           </div>
+          <?php } ?>
+
+          <?php if($login == 1 && $already == 1){?>
+          <div class = "join">
+            <div class = "card-title">Found us interesting? Come be a part of this family!</div>
+            <form action = "joinclub.php" method = "post">
+            <input type = "hidden" value = "<?php echo $club?>" name = "club">
+            <input type = "hidden" value = "<?php echo $rollno?>" name = "rollno">
+            <button type="submit" class="join1 btn btn-primary" name = "login" disabled = "true">Join the club</button>
+            </form>
+          </div>
+          <?php } ?>
+
         </div>
       </div>
     </div>

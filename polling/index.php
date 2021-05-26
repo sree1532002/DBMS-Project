@@ -1,0 +1,111 @@
+<?php
+session_start();
+$login = $_SESSION['login'];
+//$login = 1;
+$admin = 1;
+include 'functions.php';
+$con = connect();
+$query = $con->query('SELECT p.*, GROUP_CONCAT(pa.title ORDER BY pa.id) AS answers FROM polls p LEFT JOIN poll_answers pa ON pa.poll_id = p.id GROUP BY p.id');
+$polls = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
+<?php echo template_header('Polls'); 
+$i = 1;?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Uniclub | Home</title>
+  <link rel="icon" href="../Images/logo.jpeg" type="image/icon type">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../stylecards.css">
+  <link rel="stylesheet" href="../stylemain.css">
+  <link rel="stylesheet" href="../footer.css">
+  <link rel="icon" href="..logo.jpeg" type="image/icon type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#b8b5ff;">
+      <div id = "p" class="float-child">
+        <ul class="nav justify-content-end">
+        <li class="nav-item" >
+            <a class="nav-link"  id = "item" href="#">Home</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link"  id = "item" href="#about1">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="#clubs">Clubs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="announcements.php">Announcements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="polling/index.php">Polls</a>
+          </li>
+          <?php 
+          if($admin == 1){?>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="clubadmin.php">Admin</a>
+          </li>
+          <?php } ?>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="logout.php">Logout</a>
+          </li>
+          <li class="nav-item">
+            <img src="../logo.jpeg" style="height:100%;width:100px;float:left;margin-left:620px">
+          </li>
+        </ul>
+      </div>
+      </nav>
+<div class="content home">
+<?php if($login == 2){?>
+    <h2>Polls created</h2>
+            <?php } ?>
+	
+	<a href="create.php" class="create-poll">Create Poll</a>
+	<table>
+        <thead>
+            <tr>
+                <td>S.No.</td>
+                <td>Poll name</td>
+				<td>Options</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($polls as $poll): ;?>
+            <tr>
+                <td><?=$i++?></td>
+                <td><?=$poll['title']?></td>
+				<td><?=$poll['answers']?></td>
+                <td class="actions">
+					<!--<a href="vote.php?id=<?=$poll['id']?>" class="view" title="View Poll"><i class="fas fa-eye fa-xs" onclick = "loadpoll(<?=$poll['id']?>)"></i></a>-->
+                
+                    <?php if($login == 1){?>
+                    <h2> <a href="delete.php?id=<?=$poll['id']?>" class="trash" title="Delete Poll"><i class="fas fa-trash fa-xs"></i></a></h2>
+                    <?php } ?>
+                    <!--<input type="button" class="btn btn-danger" value = "Delete" onclick = "loadpoll(<?=$poll['id']?>)">-->
+                    <i class="fas fa-eye fa-xs" style = "height:30px;width:40px;background-color:#b8b5ff;padding-right:12px;padding-top:10px;" onclick = "loadpoll(<?=$poll['id']?>)">
+                </td>
+            </tr>
+            <?php endforeach;?>
+        </tbody>
+    </table>
+</div>
+<iframe name="iFrameName" height = "600px" width = "600px"></iframe>
+<script>
+function loadpoll(id){
+    var source = "vote.php?id=" + id;
+    console.log(source);
+    document.getElementsByName('iFrameName')[0].src = source;
+}
+</script>
+<?php echo template_footer(); ?>

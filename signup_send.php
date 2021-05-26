@@ -41,6 +41,7 @@ if (isset($_POST['signup'])) {
   {
     echo "<script>";
     echo "alert('Signup successful!');";
+    echo "window.location.href='main.php';";
     echo "</script>";
   }
   else{
