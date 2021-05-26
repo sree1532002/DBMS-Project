@@ -1,7 +1,11 @@
 <?php
 include 'functions.php';
 $con = connect();
+$rollno = $_SESSION['rollno'];
 if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    echo $id;
+    echo $rollno;
     $query = $con->prepare('SELECT * FROM polls WHERE id = ?');
     $query->execute([$_GET['id']]);
     $poll = $query->fetch(PDO::FETCH_ASSOC);
@@ -10,10 +14,29 @@ if (isset($_GET['id'])) {
         $query->execute([$_GET['id']]);
         $poll_answers = $query->fetchAll(PDO::FETCH_ASSOC);
         if (isset($_POST['poll_answer'])) {
-            $query = $con->prepare('UPDATE poll_answers SET votes = votes + 1 WHERE id = ?');
-            $query->execute([$_POST['poll_answer']]);
-            header ('Location: result.php?id=' . $_GET['id']);
-            exit;
+            $query1 = "SELECT * FROM polling_over WHERE roll_no = $rollno AND poll_id = $id";
+            $result = mysqli_query($con,$query1);
+            if(mysqli_fetch_assoc($result) != NULL){
+                echo "<script>";
+                echo "alert('You have already participated in the poll');";
+                echo "window.location.href='index.php';";
+                echo "</script>";
+            }
+            else{
+                $query2 = "INSERT INTO polling_over(roll_no,poll_id) VALUES('$rollno','$id')";
+                if(mysqli_query($con,$query2)){
+                    echo "<script>";
+                    echo "alert('Yo');";
+                    echo "</script>";
+                }
+                else{
+                    echo "ufff";
+                }
+                $query = $con->prepare('UPDATE poll_answers SET votes = votes + 1 WHERE id = ?');
+                $query->execute([$_POST['poll_answer']]);
+                header ('Location: result.php?id=' . $_GET['id']);
+                exit;
+            }
         }
     } else {
         die ('Poll with that ID does not exist.');
@@ -34,7 +57,7 @@ if (isset($_GET['id'])) {
         </label>
         <?php endfor; ?>
         <div>
-            
+            <input type="submit" value="Vote">
             <a href="result.php?id=<?=$poll['id']?>">View Result</a>
         </div>
     </form>

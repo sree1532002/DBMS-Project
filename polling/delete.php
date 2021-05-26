@@ -15,6 +15,9 @@ if (isset($_GET['id'])) {
             $query->execute([$_GET['id']]);
             $query = $con->prepare('DELETE FROM poll_answers WHERE poll_id = ?');
             $msg = 'You have deleted the poll!';
+            echo "<script>";
+            echo "parent.location.href='index.php';";
+            echo "</script>";
         } else {
             header('Location: index.php');
             exit;

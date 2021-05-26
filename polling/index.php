@@ -1,9 +1,6 @@
 <?php
-session_start();
-$login = $_SESSION['login'];
-//$login = 1;
-$admin = 1;
 include 'functions.php';
+$login = $_SESSION['login'];
 $con = connect();
 $query = $con->query('SELECT p.*, GROUP_CONCAT(pa.title ORDER BY pa.id) AS answers FROM polls p LEFT JOIN poll_answers pa ON pa.poll_id = p.id GROUP BY p.id');
 $polls = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -33,31 +30,31 @@ $i = 1;?>
       <div id = "p" class="float-child">
         <ul class="nav justify-content-end">
         <li class="nav-item" >
-            <a class="nav-link"  id = "item" href="#">Home</a>
+            <a class="nav-link"  id = "item" href="../main.php">Home</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link"  id = "item" href="#about1">About</a>
+            <a class="nav-link"  id = "item" href="../main.php#about1">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="#clubs">Clubs</a>
+            <a class="nav-link" id = "item" href="../main.php#clubs">Clubs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="announcements.php">Announcements</a>
+            <a class="nav-link" id = "item" href="../announcements.php">Announcements</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="#contact">Contact</a>
+            <a class="nav-link" id = "item" href="../main.php#contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="polling/index.php">Polls</a>
+            <a class="nav-link" id = "item" href="#">Polls</a>
           </li>
           <?php 
-          if($admin == 1){?>
+          if($login == 2){?>
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="clubadmin.php">Admin</a>
+            <a class="nav-link" id = "item" href="../clubadmin.php">Admin</a>
           </li>
           <?php } ?>
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="logout.php">Logout</a>
+            <a class="nav-link" id = "item" href="../logout.php">Logout</a>
           </li>
           <li class="nav-item">
             <img src="../logo.jpeg" style="height:100%;width:100px;float:left;margin-left:620px">
@@ -69,8 +66,10 @@ $i = 1;?>
 <?php if($login == 2){?>
     <h2>Polls created</h2>
             <?php } ?>
-	
-	<a href="create.php" class="create-poll">Create Poll</a>
+    <?php if($login == 2){?>
+	<button class="create-poll" onclick = "create()">Create Poll</button>
+    <?php } ?>
+    <br>
 	<table>
         <thead>
             <tr>
@@ -87,25 +86,31 @@ $i = 1;?>
                 <td><?=$poll['title']?></td>
 				<td><?=$poll['answers']?></td>
                 <td class="actions">
-					<!--<a href="vote.php?id=<?=$poll['id']?>" class="view" title="View Poll"><i class="fas fa-eye fa-xs" onclick = "loadpoll(<?=$poll['id']?>)"></i></a>-->
-                
-                    <?php if($login == 1){?>
-                    <h2> <a href="delete.php?id=<?=$poll['id']?>" class="trash" title="Delete Poll"><i class="fas fa-trash fa-xs"></i></a></h2>
-                    <?php } ?>
-                    <!--<input type="button" class="btn btn-danger" value = "Delete" onclick = "loadpoll(<?=$poll['id']?>)">-->
-                    <i class="fas fa-eye fa-xs" style = "height:30px;width:40px;background-color:#b8b5ff;padding-right:12px;padding-top:10px;" onclick = "loadpoll(<?=$poll['id']?>)">
+                <div class="fas fa-eye fa-xs" style = "height:30px;width:40px;background-color:#a3f071;border-radius:5px;padding-right:12px;padding-top:10px;" onclick = "loadpoll(<?=$poll['id']?>)"></div>
+                <?php if($login == 2){?>
+                <div class="fas fa-trash fa-xs" style = "height:30px;width:40px;background-color:#f22440;border-radius:5px;padding-right:15px;padding-top:10px;" onclick = "del(<?=$poll['id']?>)"></div>
+                <?php } ?> 
                 </td>
             </tr>
             <?php endforeach;?>
         </tbody>
     </table>
 </div>
-<iframe name="iFrameName" height = "600px" width = "600px"></iframe>
+<br>
+<iframe name="iFrameName" height = "600px" width = "100%"></iframe>
 <script>
 function loadpoll(id){
     var source = "vote.php?id=" + id;
     console.log(source);
     document.getElementsByName('iFrameName')[0].src = source;
+}
+function del(id){
+    var source = "delete.php?id=" + id;
+    console.log(source);
+    document.getElementsByName('iFrameName')[0].src = source;
+}
+function create(){
+    document.getElementsByName('iFrameName')[0].src = 'create.php';
 }
 </script>
 <?php echo template_footer(); ?>

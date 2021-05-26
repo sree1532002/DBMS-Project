@@ -15,6 +15,9 @@ if (!empty($_POST)) {
         $query->execute([$poll_id, $answer]);
     }
     $msg = 'Created Successfully!';
+    echo "<script>";
+    echo "parent.location.href='index.php';";
+    echo "</script>";
 }?>
 <?php echo template_header('Create Poll'); ?>
 <div class="content update">
