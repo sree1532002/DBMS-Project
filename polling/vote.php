@@ -4,27 +4,30 @@ $con = connect();
 $rollno = $_SESSION['rollno'];
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    echo $id;
-    echo $rollno;
+  
     $query = $con->prepare('SELECT * FROM polls WHERE id = ?');
     $query->execute([$_GET['id']]);
     $poll = $query->fetch(PDO::FETCH_ASSOC);
+    
     if ($poll) {
         $query = $con->prepare('SELECT * FROM poll_answers WHERE poll_id = ?');
         $query->execute([$_GET['id']]);
         $poll_answers = $query->fetchAll(PDO::FETCH_ASSOC);
         if (isset($_POST['poll_answer'])) {
-            $query1 = "SELECT * FROM polling_over WHERE roll_no = $rollno AND poll_id = $id";
-            $result = mysqli_query($con,$query1);
-            if(mysqli_fetch_assoc($result) != NULL){
+            $query1 =  $con->prepare("SELECT id FROM polling_over WHERE roll_no = '$rollno' AND poll_id = ?");
+            $query1->execute([$_GET['id']]);
+            $result = $query1->fetch(PDO::FETCH_ASSOC);
+           
+            if($result){
                 echo "<script>";
                 echo "alert('You have already participated in the poll');";
-                echo "window.location.href='index.php';";
+                echo "parent.location.href='index.php';";
                 echo "</script>";
             }
             else{
-                $query2 = "INSERT INTO polling_over(roll_no,poll_id) VALUES('$rollno','$id')";
-                if(mysqli_query($con,$query2)){
+                $query2 = $con->prepare("INSERT INTO polling_over(roll_no,poll_id) VALUES('$rollno','$id')");
+                
+                if($query2->execute([$_GET['id']])){
                     echo "<script>";
                     echo "alert('Yo');";
                     echo "</script>";
