@@ -110,12 +110,13 @@ if(isset($_SESSION['login']) == 2)
         <div class="modal-body">
         <form action = "addannmat.php" method="post" enctype="multipart/form-data">
               <div class="input-group-append idea">
+              <input type = "text" placeholder = "Description" name = "description">
               <input type = "hidden" placeholder = "Club ID" name = "clubid" value = "<?php echo $club;?>"><br>
               File Upload:<input type="file" name="file">
               </div>
         </div>
         <div class="modal-footer">
-          <input type="submit" class="btn btn-success" name="submit" value="upload">
+          <input type="submit" class="btn btn-success" name="submit" value="Upload">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </form>
         </div>

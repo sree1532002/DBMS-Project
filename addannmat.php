@@ -2,6 +2,7 @@
 include "db.php";
 if(isset($_REQUEST["submit"]))
 {
+    $description = $_POST['description'];
     $club_id = $_POST['clubid'];
 	$file=$_FILES["file"]["name"];
 	$tmp_name=$_FILES["file"]["tmp_name"];
@@ -11,7 +12,7 @@ if(isset($_REQUEST["submit"]))
 	$allowed=array("jpg","png","gif","pdf","wmv","pdf","zip");
 	if(in_array($ext,$allowed)){
         move_uploaded_file($tmp_name,$path);
-        mysqli_query($con,"insert into announcements_info(club_id,info)values('$club_id','$path')");
+        mysqli_query($con,"insert into announcements_info(club_id,info,description)values('$club_id','$path','$description')");
         echo "<script>";
         echo "alert('Uploaded successfully');";
         echo "window.location.href = 'clubadmin.php';";

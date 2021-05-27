@@ -12,7 +12,6 @@ if (isset($_POST['login'])){
     $count1 = $result1->num_rows;
     if($count == 1){
       $res = mysqli_fetch_assoc($result);
-      $_SESSION['club'] = $res['club_id'];
       $_SESSION["rollno"] = $rollno ;
       $_SESSION['login'] = 1;
       $sql = "INSERT INTO login(roll_no, pword) VALUES ('$rollno', '$pword')";
