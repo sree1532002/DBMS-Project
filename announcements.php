@@ -1,8 +1,11 @@
 <?php 
 session_start();
+if(isset($_SESSION['login'])){
+$login = $_SESSION['login'];
+$club = $_SESSION['club'];
 include 'db.php';
 $rollno = $_SESSION['rollno'];
-$sql = "SELECT announcements.events,announcements.dates,clubs.club_name FROM announcements INNER JOIN clubs on clubs.club_id = announcements.club_id";
+$sql = "SELECT * FROM ann_display";
 $result = mysqli_query($con,$sql);
 ?>
 <!doctype html>
@@ -93,30 +96,6 @@ $result = mysqli_query($con,$sql);
             <div class="discover">Catch the latest news here!</div>
             <div class = "subtext">Here's a single destination to get all the announcements regarding your favourite club activities.</div> 
             <div class = "ideas">
-           <!--
-            <div class = "card-title">Post a Message right here!</div>
-          </div>
-          <div class="input-group mb-3">
-            <form action = "addann.php" method = "post" class = "ideatxt">
-              <div class="input-group-append idea">
-                <input type="text" name = "events" class="form-control" name = 'events' placeholder="Post" aria-label="Recipient's idea" aria-describedby="basic-addon2" required>
-                <button type="submit" class="logbtn addbtn btn btn-primary" name = "addann">Post</button>  
-              </div>
-        
-              <div class="input-group-append">
-                  <input type = "hidden" name = "rollno" value ="<?php echo $rollno;?>">
-                  <label for="clubid">Choose the club name</label>
-                    <select name="clubid" id="clubid" required>
-                        <option value="0">General</option>
-                        <option value="1">Astro Club</option>
-                        <option value="2">Computer Club</option>
-                        <option value="3">Photography Club</option>
-                        <option value="4">Cultural Club</option>
-                   </select>
-                   <input type="datetime-local"  class="float-right" id="date" placeholder="Enter date&time of the event" name="date" required>
-              </div>
-            </form>
-          </div>-->
           <div class = "card-title">Latest announcements</div>
           <div class="card container-fluid ideasd">
             <ul class="list-group list-group-flush">
@@ -132,6 +111,21 @@ $result = mysqli_query($con,$sql);
         </div>
       </div>
     </div>
-  
+  <?php
+  $sql = "SELECT * FROM announcements_info";
+  $result = mysqli_query($con,$sql);
+  while($row = mysqli_fetch_assoc($result)){?>
+     <p><?php echo $row['description'];?><a href="<?php echo $row['info'];?>">Open</a></p>
+    </iframe>
+  <?php
+  }
+  ?>      
 </body>
 </html>
+<?php } 
+else{
+  echo "<script>";
+  echo "alert('Access Denied');";
+  echo "window.location.href = 'index.php';";
+  echo "</script>";
+}?>

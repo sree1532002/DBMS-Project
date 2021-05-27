@@ -3,12 +3,11 @@
 <head><link rel="icon" href="images/logo.jpeg" type="image/icon type"></head>
 <?php
 session_start();
-//$club = $_SESSION['club'];
-$set = 1;
-if(isset($set))
+if(isset($_SESSION['login'])  == 2)
 {
+    $club = $_SESSION['club'];
     include "db.php";
-    $query = "SELECT ideas.id, signup.name,ideas.idea,signup.dept,signup.phone,ideas.visibility FROM signup INNER JOIN ideas ON signup.roll_no = ideas.roll_no";
+    $query = "SELECT ideas.id, signup.name,ideas.idea,signup.dept,signup.phone,ideas.visibility FROM signup INNER JOIN ideas ON signup.roll_no = ideas.roll_no WHERE club_id = $club";
     $result = mysqli_query($con,$query);
 ?>
 <head>
@@ -67,7 +66,6 @@ if(isset($set))
 </div>
 </body>
 </html>
-<?php } ?>
 <script>
 function change(id, visibility){
     var xmlhttp = new XMLHttpRequest();
@@ -80,3 +78,11 @@ function change(id, visibility){
     xmlhttp.send();
 }
 </script>
+<?php }
+else{
+  echo "<script>";
+  echo "alert('Access Denied');";
+  echo "window.location.href = 'index.php';";
+  echo "</script>";
+}
+?>

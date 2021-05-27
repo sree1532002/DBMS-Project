@@ -11,6 +11,8 @@ if (isset($_POST['login'])){
     $count = $result->num_rows;
     $count1 = $result1->num_rows;
     if($count == 1){
+      $res = mysqli_fetch_assoc($result);
+      $_SESSION['club'] = $res['club_id'];
       $_SESSION["rollno"] = $rollno ;
       $_SESSION['login'] = 1;
       $sql = "INSERT INTO login(roll_no, pword) VALUES ('$rollno', '$pword')";
@@ -25,6 +27,8 @@ if (isset($_POST['login'])){
         }
     }
     else if($count1 == 1){
+        $res = mysqli_fetch_assoc($result1);
+        $_SESSION['club'] = $res['club_id'];
         $_SESSION["rollno"] = $rollno ;
         $_SESSION['login'] = 2;
         echo "<script>";

@@ -3,13 +3,12 @@
 <head><link rel="icon" href="images/logo.jpeg" type="image/icon type"></head>
 <?php
 session_start();
-//$club = $_SESSION['club'];
-$club = 1;
-$set = 1;
-if(isset($set))
+if(isset($_SESSION['login']) == 2)
 {
     include "db.php";
-    $query = "SELECT * FROM announcements";
+    $club = $_SESSION['club'];
+    $login = $_SESSION['login'];
+    $query = "SELECT * FROM announcements WHERE club_id = '$club'";
     $result = mysqli_query($con,$query);
 ?>
 <head>
@@ -25,8 +24,7 @@ if(isset($set))
 <body>
     <h1 style ="text-align:center">Announcements</h1>
     <div class="container">
-  
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add</button>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add announcement</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -67,7 +65,7 @@ if(isset($set))
 </div>
 
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Add Club</button>
-
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Add document</button>
   <!-- Modal -->
   <div class="modal fade" id="myModal1" role="dialog">
     <div class="modal-dialog">
@@ -93,6 +91,31 @@ if(isset($set))
         </div>
         <div class="modal-footer">
           <input type="submit" class="btn btn-success" value = "Add">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add documents (Posters/ documents)</h4>
+        </div>
+        <div class="modal-body">
+        <form action = "addannmat.php" method="post" enctype="multipart/form-data">
+              <div class="input-group-append idea">
+              <input type = "hidden" placeholder = "Club ID" name = "clubid" value = "<?php echo $club;?>"><br>
+              File Upload:<input type="file" name="file">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-success" name="submit" value="upload">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </form>
         </div>

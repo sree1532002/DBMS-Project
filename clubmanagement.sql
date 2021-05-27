@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2021 at 09:19 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.28
+-- Generation Time: May 27, 2021 at 02:01 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -70,7 +69,44 @@ INSERT INTO `announcements` (`id`, `club_id`, `events`, `dates`) VALUES
 (9, '0', 'Assemble at vivek audiiiii', '2021-05-24 10:53:00'),
 (10, '0', 'added for testingggg', '2021-05-24 10:55:00'),
 (16, '0', 'Come to tag audi at 9am', '2021-05-14 11:02:00'),
-(17, '3', 'hey', '2021-05-14 05:22:00');
+(18, '3', 'Hello akshuma', '2021-05-20 13:44:00'),
+(19, '2', 'testing views', '2021-04-30 11:40:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `announcements_info`
+--
+
+CREATE TABLE `announcements_info` (
+  `id` int(11) NOT NULL,
+  `club_id` varchar(10) NOT NULL,
+  `info` text NOT NULL,
+  `description` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `announcements_info`
+--
+
+INSERT INTO `announcements_info` (`id`, `club_id`, `info`, `description`) VALUES
+(1, '1', 'Images/2019103513_LA_ASSIGNNENT_2.pdf', 'Assignment1'),
+(2, '1', 'Images/2019103513_LA_ASSIGNNENT_2.pdf', 'Assignment2'),
+(3, '1', 'Images/2019103513_LA_ASSIGNNENT_2.pdf', 'Assignment3'),
+(4, '1', 'Images/sky-5375005_1920.jpg', 'Nature'),
+(5, '1', 'Images/food-5227740_1920.jpg', 'Food');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `ann_display`
+-- (See below for the actual view)
+--
+CREATE TABLE `ann_display` (
+`events` text
+,`dates` timestamp
+,`club_name` varchar(20)
+);
 
 -- --------------------------------------------------------
 
@@ -97,7 +133,10 @@ INSERT INTO `clubs` (`club_id`, `club_name`, `president`, `incharge`, `t_contact
 ('3', 'Photography Club', '2017103003', 'Sanju', '8765876545'),
 ('4', 'Cultural Club', '2017103004', 'Suganthini', '9876987661'),
 ('5', 'Litclub', '2017103006', 'Shei', '9876678901'),
-('6', 'Litclub', '2017103006', 'Shei', '9876678901');
+('6', 'Litclub', '2017103006', 'Shei', '9876678901'),
+('7', 'Music club', '2017103007', 'Geeetha', '9876678900'),
+('8', 'Rotaract Club', '2017103008', 'Latha', '9876678904'),
+('9', 'Leo club', '2017103009', 'lala', '4567876534');
 
 -- --------------------------------------------------------
 
@@ -122,7 +161,19 @@ INSERT INTO `club_layout` (`club_id`, `heading`, `image`, `description`) VALUES
 ('3', 'Welcome to the Photography Club!', 'Images/photos.jpg', 'Is photography your passion? Do you see the world through a lens? Welcome, fellow artist!'),
 ('4', 'Welcome to the Cultural Club!', 'Images/club4.jpg', 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'),
 ('5', 'Welcome to LitCLub!', '60abaaf5d0df80.75262346.png', 'Hola!!'),
-('6', 'Welcome to LitCLub!', '60ababa742a184.72383616.png', 'Hola!!');
+('6', 'Welcome to LitCLub!', '60ababa742a184.72383616.png', 'Hola!!'),
+('7', 'Welcome to MusicCLub!', '60ad29d9480aa4.80404812.png', 'Sweet'),
+('8', 'Welcome to Rotaract Club!', '60af80c04bcc20.13771807.jpg', 'Hello everyone!'),
+('9', 'Welcome', '60af830b9bd563.34589231.jpg', 'Hola');
+
+--
+-- Triggers `club_layout`
+--
+DELIMITER $$
+CREATE TRIGGER `club_add` BEFORE INSERT ON `club_layout` FOR EACH ROW INSERT INTO clubs(club_id,club_name,incharge,president,t_contact) 
+                    VALUES('9','Leo club','lala','2017103009','4567876534')
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -143,12 +194,13 @@ CREATE TABLE `ideas` (
 --
 
 INSERT INTO `ideas` (`id`, `club_id`, `idea`, `roll_no`, `visibility`) VALUES
-(1, '1', 'Moon watch shows can be conducted', '2019103585', 1),
+(1, '1', 'Moon watch shows can be conducted', '2019103585', 0),
 (2, '1', 'Planetorium visit', '2019103585', 0),
 (3, '1', 'Planetorium visit can be conducted', '2019103585', 1),
-(4, '1', 'Website comp', '2019103585', 1),
+(4, '2', 'Website comp', '2019103585', 0),
 (5, '2', 'Website competition', '2019103585', 1),
-(6, '1', 'Moon watch shows can be conducted..........', '2019103585', 1);
+(6, '1', 'Moon watch shows can be conducted..........', '2019103585', 1),
+(7, '1', 'Telescope seminar', '2019103040', 1);
 
 -- --------------------------------------------------------
 
@@ -177,7 +229,14 @@ INSERT INTO `login` (`roll_no`, `pword`) VALUES
 ('2019103585', 'ratcha'),
 ('2019103585', 'ratcha'),
 ('2019103585', 'ratcha'),
-('2019103585', 'ratcha');
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
+('2019103040', 'kesh'),
+('2019103040', 'kesh'),
+('2019103040', 'kesh'),
+('2019103585', 'ratcha'),
+('2019103040', 'kesh');
 
 -- --------------------------------------------------------
 
@@ -214,6 +273,7 @@ CREATE TABLE `signup` (
 --
 
 INSERT INTO `signup` (`roll_no`, `name`, `year`, `dept`, `email`, `pword`, `phone`) VALUES
+('2019103040', 'Keshikaa', 2, 'CSE', 'keshikaa11@gmail.com', 'kesh', '9234091872'),
 ('2019103585', 'Sreeratcha', 2, 'CSE', 'ratchabala@gmail.com', 'ratcha', '9445644788');
 
 -- --------------------------------------------------------
@@ -235,8 +295,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `roll_no`, `interested_status`, `club_id`, `accepted_status`) VALUES
-(1, '2019103585', 1, '1', 0),
-(7, '2019103585', 1, '2', 1);
+(1, '2019103585', 1, '1', 1),
+(7, '2019103585', 1, '2', 1),
+(8, '2019103040', 1, '1', 1),
+(9, '2019103040', 1, '3', 0),
+(10, '2019103040', 1, '2', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `ann_display`
+--
+DROP TABLE IF EXISTS `ann_display`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ann_display`  AS  select `announcements`.`events` AS `events`,`announcements`.`dates` AS `dates`,`clubs`.`club_name` AS `club_name` from (`announcements` join `clubs` on(`clubs`.`club_id` = `announcements`.`club_id`)) ;
 
 --
 -- Indexes for dumped tables
@@ -255,6 +327,12 @@ ALTER TABLE `admin`
 ALTER TABLE `announcements`
   ADD PRIMARY KEY (`id`),
   ADD KEY `club_id` (`club_id`);
+
+--
+-- Indexes for table `announcements_info`
+--
+ALTER TABLE `announcements_info`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `clubs`
@@ -311,19 +389,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `announcements_info`
+--
+ALTER TABLE `announcements_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ideas`
 --
 ALTER TABLE `ideas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

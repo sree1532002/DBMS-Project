@@ -26,19 +26,27 @@ if(isset($_FILES)){
                     $t_contact = $con->real_escape_string($_POST['contact']);
                     $heading = $con->real_escape_string($_POST['heading']);
                     $description = $con->real_escape_string($_POST['description']);
-                    $sql0 = "INSERT INTO clubs(club_id,club_name,incharge,president,t_contact) VALUES('$club_id','$club_name','$incharge','$president','$t_contact')";
+                    $sql0 = "CREATE OR REPLACE TRIGGER club_add BEFORE INSERT ON club_layout FOR EACH 
+                    ROW INSERT INTO clubs(club_id,club_name,incharge,president,t_contact) 
+                    VALUES('$club_id','$club_name','$incharge','$president','$t_contact')";
                     $sql = "INSERT INTO club_layout(club_id,heading,image,description) VALUES ('$club_id','$heading','$filenamenew','$description')";
                     if(mysqli_query($con, $sql0))
                     {
-                        echo 'Trigger added';
+                        echo "<script>";
+                        echo "alert('Trigger added');";
+                        echo "window.location.href = 'clubadmin.php';";
+                        echo "</script>";
                         if(mysqli_query($con, $sql))
                         {
-                            echo 'Announcement added';
+                            echo "<script>";
+                            echo "alert('Announcement added');";
+                            echo "window.location.href = 'clubadmin.php';";
+                            echo "</script>";
                         }
                         else{
                             echo "Error:  <br>" . $con->error;
                         }
-                    }
+                   }
                     else{
                         echo "Error:  <br>" . $con->error;
                     }

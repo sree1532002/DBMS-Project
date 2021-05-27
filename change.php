@@ -41,4 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+else{
+        echo "<script>";
+        echo "alert('Access Denied');";
+        echo "window.location.href = 'index.php';";
+        echo "</script>";
+}
 ?>

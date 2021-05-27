@@ -17,5 +17,8 @@ if(isset($_REQUEST['id'])) {
 
     $con->close();
 }else{
-    echo "boo";
+      echo "<script>";
+      echo "alert('Access Denied');";
+      echo "window.location.href = 'index.php';";
+      echo "</script>";
 }

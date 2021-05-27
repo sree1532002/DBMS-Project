@@ -1,16 +1,15 @@
-<html>
-<head>
+<!DOCTYPE html>
 <?php
 session_start();
-//$club = $_SESSION['club'];
-$set = 1;
-if(isset($set))
+if(isset($_SESSION['login']) == 2)
 {
     include "db.php";
-    $query = "SELECT signup.roll_no,signup.name,signup.year,signup.dept,users.club_id,signup.email,signup.phone,users.accepted_status FROM signup INNER JOIN users ON signup.roll_no = users.roll_no";
+    $club = $_SESSION['club'];
+    $query = "SELECT signup.roll_no,signup.name,signup.year,signup.dept,users.club_id,signup.email,signup.phone,users.accepted_status FROM signup INNER JOIN users ON signup.roll_no = users.roll_no WHERE users.club_id = $club";
     $result = mysqli_query($con,$query);
 
 ?>
+<head>
 <link rel="icon" href="favicon.ico" type="image/icon type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -71,7 +70,13 @@ if(isset($set))
 </table>
 </body>
 </html>
-<?php } ?>
+<?php } 
+else{
+  echo "<script>";
+  echo "alert('Access Denied');";
+  echo "window.location.href = 'index.php';";
+  echo "</script>";
+}?>
 <script>
 function change(roll_no,club_id,accepted_status){
     var xmlhttp = new XMLHttpRequest();

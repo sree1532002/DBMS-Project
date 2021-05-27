@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once('PHPMailer/PHPMailerAutoload.php');
-//$email = $_SESSION['mail'];
 if(isset($_REQUEST['roll_no'])) {
     $roll_no = $_REQUEST['roll_no'];
     $accepted_status = $_REQUEST['accepted_status'];
@@ -45,5 +44,8 @@ if(isset($_REQUEST['roll_no'])) {
 
     $con->close();
 }else{
-    echo "boo";
+    echo "<script>";
+    echo "alert('Access Denied');";
+    echo "window.location.href = 'index.php';";
+    echo "</script>";
 }

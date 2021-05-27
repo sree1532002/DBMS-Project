@@ -1,5 +1,6 @@
 <?php 
 session_start();
+if(isset($_POST['club'])){
 include 'db.php';
 $club = $_POST['club'];
 $_SESSION['clubno'] = $club;
@@ -181,6 +182,15 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 </script>
-  <?php include "footer.php"?>
-  </body>
-  </html>
+</body>
+</html>
+<?php
+  include "footer.php";
+}
+else{
+      echo "<script>";
+      echo "alert('Access Denied');";
+      echo "window.location.href = 'index.php';";
+      echo "</script>";
+}
+?>

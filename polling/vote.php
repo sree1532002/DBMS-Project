@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
            
             if($result){
                 echo "<script>";
-                echo "alert('You have already participated in the poll');";
+                echo "alert('You have already responded');";
                 echo "parent.location.href='index.php';";
                 echo "</script>";
             }
