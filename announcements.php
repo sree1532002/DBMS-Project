@@ -79,7 +79,7 @@ $result = mysqli_query($con,$sql);
           <?php 
           if($admin == 1){?>
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="clubadmin.php">Admin</a>
+            <a class="nav-link" id = "item" href="admincards.php">Admin</a>
           </li>
           <?php } ?>
           <li class="nav-item">

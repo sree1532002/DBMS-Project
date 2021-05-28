@@ -3,6 +3,21 @@ body{
  
     padding :0px!important;
 }
+#stylehome{
+    background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+.about{
+    padding: 30px;
+    font-size: x-large;
+  }
+  .uni{
+    text-align: center!important;
+    font-family: 'Dancing Script', cursive!important;
+    font-size: 150px!important;
+    color: #7868e6!important;
+  }
 
 #p.align-right ul li{
     position: relative;

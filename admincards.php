@@ -29,13 +29,13 @@
       <div id = "p" class="float-child">
         <ul class="nav justify-content-end">
         <li class="nav-item" >
-            <a class="nav-link"  id = "item" href="#">Home</a>
+            <a class="nav-link"  id = "item" href="main.php">Home</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link"  id = "item" href="#about1">About</a>
+            <a class="nav-link"  id = "item" href="main.php#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="#clubs">Clubs</a>
+            <a class="nav-link" id = "item" href="main.php#clubs">Clubs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id = "item" href="announcements.php">Announcements</a>
