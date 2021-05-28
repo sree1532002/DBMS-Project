@@ -70,10 +70,10 @@
 	<div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:rgba(187, 120, 36, 0.1) ">
-            <center><i class="fa fa-area-chart" style="color:#BB7824"></i></center>
+            <center><i class="fa fa-bullhorn" style="color:#BB7824"></i></center>
           </div>
           <div class="wrimagecard-topimage_title">
-            <h4>Charts
+            <h4>Announcements
             </h4>
           </div>
         </a>
@@ -83,10 +83,10 @@
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
-            <center><i class = "fa fa-cubes" style="color:#16A085"></i></center>
+            <center><i class = "fa fa-lightbulb-o" style="color:#16A085"></i></center>
           </div>
           <div class="wrimagecard-topimage_title">
-            <h4>Controls
+            <h4>Ideas
             <div class="pull-right badge" id="WrControls"></div></h4>
           </div>
         </a>
@@ -96,10 +96,10 @@
       <div class="wrimagecard wrimagecard-topimage">
           <a href="#">
           <div class="wrimagecard-topimage_header" style="background-color:  rgba(213, 15, 37, 0.1)">
-            <center><i class="fa fa-pencil-square-o" style="color:#d50f25"> </i></center>
+            <center><i class="fa fa-users" style="color:#d50f25"> </i></center>
           </div>
           <div class="wrimagecard-topimage_title" >
-            <h4>Forms
+            <h4>Users
             <div class="pull-right badge" id="WrForms"></div>
             </h4>
           </div>
