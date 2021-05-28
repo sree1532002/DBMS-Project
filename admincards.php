@@ -68,9 +68,9 @@
 	<div class="row">
 	<div class="col-md-3 col-sm-4">
 	<div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color:rgba(187, 120, 36, 0.1) ">
-            <center><i class="fa fa-bullhorn" style="color:#BB7824"></i></center>
+          <a href="clubadmin.php">
+          <div class="wrimagecard-topimage_header" style="background-color:#FFDCF4 ">
+            <center><i class="fa fa-bullhorn" style="color:#F07BBB"></i></center>
           </div>
           <div class="wrimagecard-topimage_title">
             <h4>Announcements
@@ -81,9 +81,9 @@
       </div>
     <div class="col-md-3 col-sm-4">
       <div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
-            <center><i class = "fa fa-lightbulb-o" style="color:#16A085"></i></center>
+          <a href="ideaverification.php">
+          <div class="wrimagecard-topimage_header" style="background-color: #F5E1FD">
+            <center><i class = "fa fa-lightbulb-o" style="color:#9979C1"></i></center>
           </div>
           <div class="wrimagecard-topimage_title">
             <h4>Ideas
@@ -94,9 +94,9 @@
 </div>
 <div class="col-md-3 col-sm-4">
       <div class="wrimagecard wrimagecard-topimage">
-          <a href="#">
-          <div class="wrimagecard-topimage_header" style="background-color:  rgba(213, 15, 37, 0.1)">
-            <center><i class="fa fa-users" style="color:#d50f25"> </i></center>
+          <a href="users.php">
+          <div class="wrimagecard-topimage_header" style="background-color:#FFDCF4">
+            <center><i class="fa fa-users" style="color:#F07BBB"> </i></center>
           </div>
           <div class="wrimagecard-topimage_title" >
             <h4>Users
@@ -104,6 +104,19 @@
             </h4>
           </div>
     </div>
+    </div>
+	<div class="col-md-3 col-sm-4">
+      <div class="wrimagecard wrimagecard-topimage">
+          <a href="addclub.php">
+          <div class="wrimagecard-topimage_header" style="background-color: #F5E1FD">
+             <center><i class="fa fa-comments" style="color:#9979C1"> </i></center>
+          </div>
+          <div class="wrimagecard-topimage_title">
+            <h4>Add Club
+            <div class="pull-right badge" id="WrGridSystem"></div></h4>
+          </div>
+          
+</div>
   
 </body>
 </html>
