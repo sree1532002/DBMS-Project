@@ -62,9 +62,10 @@
       </nav>
 
       <!--navbar finishes -->
-
+    <div class = "util">Admin utilities</div>
+    <hr>
       <!--cards start -->
-      <div class="container-fluid">
+  <div class="container-fluid">
 	<div class="row">
 	<div class="col-md-3 col-sm-4">
 	<div class="wrimagecard wrimagecard-topimage">

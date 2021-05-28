@@ -109,4 +109,25 @@ a.wrimagecard:hover, .wrimagecard-topimage:hover {
     color: #525c65;
     transition: color 0.3s ease;
 }
-
+h4 {
+  color: #1a1c20!important;
+  font-size: 20px!important;
+  font-weight: 400!important;
+  font-family: "Nunito", sans-serif!important;
+}
+.util {
+  color: #1a1c20!important;
+  font-size: 65px!important;
+  font-weight: 500!important;
+  font-family: 'Dancing Script', cursive;
+  padding-left: 20px;
+  text-align: center;
+}
+hr {
+  width: 10%;
+  height: 2px!important;
+  background-color:#b8b5ff;
+}
+.container-fluid {
+  padding-top: 22px;
+}
