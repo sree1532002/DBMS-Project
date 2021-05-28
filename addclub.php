@@ -34,13 +34,13 @@ if(isset($_FILES)){
                     {
                         echo "<script>";
                         echo "alert('Trigger added');";
-                        echo "window.location.href = 'clubadmin.php';";
+                        echo "window.location.href = 'admincards.php';";
                         echo "</script>";
                         if(mysqli_query($con, $sql))
                         {
                             echo "<script>";
                             echo "alert('Announcement added');";
-                            echo "window.location.href = 'clubadmin.php';";
+                            echo "window.location.href = 'admincards.php';";
                             echo "</script>";
                         }
                         else{

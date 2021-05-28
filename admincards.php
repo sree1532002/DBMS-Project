@@ -130,86 +130,40 @@ $rollno = $_SESSION['rollno'];
     </div>
 	<div class="col-md-3 col-sm-4">
       <div class="wrimagecard wrimagecard-topimage">
-          <a href="" >
           <div class="wrimagecard-topimage_header" style="background-color: #F5E1FD">
              <center><i class="fa fa-comments" style="color:#9979C1"> </i></center>
           </div>
           <div class="wrimagecard-topimage_title">
-            <h4><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1"></button>Add Club
+            <h4>
+            <button type="button" style = "background-color:white;border: none;color: black;" data-toggle="modal" data-target="#exampleModal">
+    Add Club
+</button>
             <div class="pull-right badge" id="WrGridSystem"></div></h4>
-          </div></a>
+          </div>
          
         </div>
     </div>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Add Club</button>
-
-    <!--modal-->
-    
-<!--end of modal-->
-    
-<!--footer-->
-
 </body>
-<div class="modal fade" id="myModal1" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add club</h4>
-        </div>
-        <div class="modal-body">
-        <form action = "addclub.php" method="post" enctype="multipart/form-data">
-              <div class="input-group-append idea">
-              <input type = "text" placeholder = "Club ID" name = "clubid"><br>
-              <input type = "text" placeholder = "Club name" name = "clubname"><br>
-              <input type = "text" placeholder = "President Roll number" name = "president"><br>
-              <input type = "text" placeholder = "Incharge name" name = "incharge"><br>
-              <input type = "text" placeholder = "Contact number" name = "contact"><br><br>
-              <input type = "text" placeholder = "Heading" name = "heading"><br>
-              <input type = "text" placeholder = "Description" name = "description"><br>
-              <input type = "file" id = "image" name = "image">
-              </div>
-        </div>
-        <div class="modal-footer">
-          <input type="submit" class="btn btn-success" value = "Add">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          </form>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Club</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
       <form action = "addclub.php" method="post" enctype="multipart/form-data">
-              <div class="input-group-append idea">
               <input type = "text" placeholder = "Club ID" name = "clubid"><br>
               <input type = "text" placeholder = "Club name" name = "clubname"><br>
               <input type = "text" placeholder = "President Roll number" name = "president"><br>
               <input type = "text" placeholder = "Incharge name" name = "incharge"><br>
-              <input type = "text" placeholder = "Contact number" name = "contact"><br><br>
+              <input type = "text" placeholder = "Contact number" name = "contact"><br>
               <input type = "text" placeholder = "Heading" name = "heading"><br>
               <input type = "text" placeholder = "Description" name = "description"><br>
-              <input type = "file" id = "image" name = "image">
-              </div>  
+              <input type = "file" id = "image" name = "image">   
       </div>
       <div class="modal-footer">
       <input type="submit" class="btn btn-success" value = "Add">

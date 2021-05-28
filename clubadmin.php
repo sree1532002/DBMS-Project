@@ -64,41 +64,8 @@ if(isset($_SESSION['login']) == 2)
   </div>
 </div>
 
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Add Club</button>
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Add document</button>
-  <!-- Modal -->
-  <div class="modal fade" id="myModal1" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add club</h4>
-        </div>
-        <div class="modal-body">
-        <form action = "addclub.php" method="post" enctype="multipart/form-data">
-              <div class="input-group-append idea">
-              <input type = "text" placeholder = "Club ID" name = "clubid"><br>
-              <input type = "text" placeholder = "Club name" name = "clubname"><br>
-              <input type = "text" placeholder = "President Roll number" name = "president"><br>
-              <input type = "text" placeholder = "Incharge name" name = "incharge"><br>
-              <input type = "text" placeholder = "Contact number" name = "contact"><br>
-              <input type = "text" placeholder = "Heading" name = "heading"><br>
-              <input type = "text" placeholder = "Description" name = "description"><br>
-              <input type = "file" id = "image" name = "image">
-              </div>
-        </div>
-        <div class="modal-footer">
-          <input type="submit" class="btn btn-success" value = "Add">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          </form>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-</div>
+
 
 <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
