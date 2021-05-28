@@ -61,7 +61,7 @@ else{
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <img src="logo.jpeg" style="height:100%;width:100px;float:left;margin-left:620px">
+            <img src="logo.jpeg" style="height:100%;width:100px;float:left;margin-left:450px">
           </li>
         </ul>
       </div>

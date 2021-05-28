@@ -26,6 +26,8 @@ $i = 1;?>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<body class="container-fluid">
+   
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#b8b5ff;">
       <div id = "p" class="float-child">
         <ul class="nav justify-content-end">
@@ -57,7 +59,7 @@ $i = 1;?>
             <a class="nav-link" id = "item" href="../logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <img src="../logo.jpeg" style="height:100%;width:100px;float:left;margin-left:620px">
+            <img src="../logo.jpeg" style="height:100%;width:100px;float:left;margin-left:450px">
           </li>
         </ul>
       </div>
@@ -98,6 +100,9 @@ $i = 1;?>
 </div>
 <br>
 <iframe name="iFrameName" height = "600px" width = "100%"></iframe>
+
+</body>
+</html>
 <script>
 function loadpoll(id){
     var source = "vote.php?id=" + id;

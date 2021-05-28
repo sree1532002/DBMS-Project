@@ -51,7 +51,7 @@
       #item:link, #item:visited {
        
         color: #0c0c0c;
-        padding: 14px 14px;
+         padding: 14px 14px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -64,7 +64,7 @@
       #item:hover, #item:active {
         background-color: #b8b5ff;
         color: #7868e6;
-        padding: 14px 25px;
+        padding: 14px 14px;
         text-align: center;
         text-decoration: none;
         display: inline-block;

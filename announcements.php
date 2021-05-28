@@ -3,6 +3,12 @@ session_start();
 if(isset($_SESSION['login'])){
 $login = $_SESSION['login'];
 $club = $_SESSION['club'];
+if($_SESSION['login'] == 2){
+  $admin = 1;
+}
+else{
+  $admin = 0;
+}
 include 'db.php';
 $rollno = $_SESSION['rollno'];
 $sql = "SELECT * FROM ann_display";
@@ -67,10 +73,19 @@ $result = mysqli_query($con,$sql);
             <a class="nav-link" id = "item" href="#contact">Contact</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" id = "item" href="polling/index.php">Polls</a>
+          </li>
+          <?php 
+          if($admin == 1){?>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="clubadmin.php">Admin</a>
+          </li>
+          <?php } ?>
+          <li class="nav-item">
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <img src="logo.jpeg" style="height:100%;width:100px;float:left;margin-left:620px">
+            <img src="logo.jpeg" style="height:100%;width:100px;float:left;margin-left:450px">
           </li>
         </ul>
       </div>
