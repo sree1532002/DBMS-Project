@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 02:01 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Generation Time: May 28, 2021 at 01:53 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -145,6 +146,7 @@ INSERT INTO `clubs` (`club_id`, `club_name`, `president`, `incharge`, `t_contact
 --
 
 CREATE TABLE `club_layout` (
+  `id` int(11) NOT NULL,
   `club_id` varchar(10) DEFAULT NULL,
   `heading` text DEFAULT NULL,
   `image` text DEFAULT NULL,
@@ -155,16 +157,16 @@ CREATE TABLE `club_layout` (
 -- Dumping data for table `club_layout`
 --
 
-INSERT INTO `club_layout` (`club_id`, `heading`, `image`, `description`) VALUES
-('1', 'Welcome to the Astronomy Club!', 'Images/galaxy.jpg', 'Do you love the stars? Are you mesmerized by the universe? Do you feel a strong passion for astronomy? You\'ve come to the right place!'),
-('2', 'Welcome to the Computers Club!', 'Images/computer.jpg', 'Hackathons. All nighters. Coffee and so much more.'),
-('3', 'Welcome to the Photography Club!', 'Images/photos.jpg', 'Is photography your passion? Do you see the world through a lens? Welcome, fellow artist!'),
-('4', 'Welcome to the Cultural Club!', 'Images/club4.jpg', 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'),
-('5', 'Welcome to LitCLub!', '60abaaf5d0df80.75262346.png', 'Hola!!'),
-('6', 'Welcome to LitCLub!', '60ababa742a184.72383616.png', 'Hola!!'),
-('7', 'Welcome to MusicCLub!', '60ad29d9480aa4.80404812.png', 'Sweet'),
-('8', 'Welcome to Rotaract Club!', '60af80c04bcc20.13771807.jpg', 'Hello everyone!'),
-('9', 'Welcome', '60af830b9bd563.34589231.jpg', 'Hola');
+INSERT INTO `club_layout` (`id`, `club_id`, `heading`, `image`, `description`) VALUES
+(1, '1', 'Welcome to the Astronomy Club!', 'Images/galaxy.jpg', 'Do you love the stars? Are you mesmerized by the universe? Do you feel a strong passion for astronomy? You\'ve come to the right place!'),
+(2, '2', 'Welcome to the Computers Club!', 'Images/computer.jpg', 'Hackathons. All nighters. Coffee and so much more.'),
+(3, '3', 'Welcome to the Photography Club!', 'Images/photo_club.jpg', 'Is photography your passion? Do you see the world through a lens? Welcome, fellow artist!'),
+(4, '4', 'Welcome to the Cultural Club!', 'Images/musicclub.jpg', 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'),
+(5, '5', 'Welcome to LitCLub!', '60abaaf5d0df80.75262346.png', 'Hola!!'),
+(6, '6', 'Welcome to LitCLub!', '60ababa742a184.72383616.png', 'Hola!!'),
+(7, '7', 'Welcome to MusicCLub!', '60ad29d9480aa4.80404812.png', 'Sweet'),
+(8, '8', 'Welcome to Rotaract Club!', '60af80c04bcc20.13771807.jpg', 'Hello everyone!'),
+(9, '9', 'Welcome', '60af830b9bd563.34589231.jpg', 'Hola');
 
 --
 -- Triggers `club_layout`
@@ -344,6 +346,7 @@ ALTER TABLE `clubs`
 -- Indexes for table `club_layout`
 --
 ALTER TABLE `club_layout`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `club_id` (`club_id`);
 
 --
@@ -396,6 +399,12 @@ ALTER TABLE `announcements`
 --
 ALTER TABLE `announcements_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `club_layout`
+--
+ALTER TABLE `club_layout`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ideas`

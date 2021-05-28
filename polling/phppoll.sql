@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2021 at 02:01 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Generation Time: May 28, 2021 at 01:54 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -38,7 +39,9 @@ CREATE TABLE `polling_over` (
 --
 
 INSERT INTO `polling_over` (`id`, `poll_id`, `roll_no`) VALUES
-(1, 12, '2017103001');
+(1, 12, '2017103001'),
+(2, 12, '2017103002'),
+(3, 11, '2017103002');
 
 -- --------------------------------------------------------
 
@@ -80,10 +83,10 @@ CREATE TABLE `poll_answers` (
 INSERT INTO `poll_answers` (`id`, `poll_id`, `title`, `votes`) VALUES
 (26, 11, 'DBMS', 3),
 (27, 11, 'DSA ', 2),
-(28, 11, 'OS', 2),
+(28, 11, 'OS', 3),
 (29, 11, 'CA', 2),
 (30, 12, 'Yes', 1),
-(31, 12, 'No', 0);
+(31, 12, 'No', 1);
 
 --
 -- Indexes for dumped tables
@@ -115,7 +118,7 @@ ALTER TABLE `poll_answers`
 -- AUTO_INCREMENT for table `polling_over`
 --
 ALTER TABLE `polling_over`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `polls`
