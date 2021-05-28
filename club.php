@@ -6,6 +6,12 @@ $club = $_POST['club'];
 $_SESSION['clubno'] = $club;
 $login = $_SESSION['login'];
 $rollno = $_SESSION['rollno'];
+if($_SESSION['login'] == 2){
+  $admin = 1;
+}
+else{
+  $admin = 0;
+}
 
 $sql = "SELECT idea FROM ideas where club_id = $club AND visibility = 1";
 $result = mysqli_query($con,$sql);
@@ -38,7 +44,7 @@ else{
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="images/logo.jpeg" type="image/icon type">
+    <link rel="icon" href="Images/logohat.jpeg" type="image/icon type">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -90,10 +96,19 @@ else{
             <a class="nav-link" id = "item" href="#contact">Contact</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" id = "item" href="polling/index.php">Polls</a>
+          </li>
+          <?php 
+          if($admin == 1){?>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="clubadmin.php">Admin</a>
+          </li>
+          <?php } ?>
+          <li class="nav-item">
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <img src="logo.jpeg" style="height:100%;width:100px;float:left;margin-left:450px">
+          <img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px">
           </li>
         </ul>
       </div>

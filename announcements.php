@@ -20,7 +20,7 @@ $result = mysqli_query($con,$sql);
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="images/logo.jpeg" type="image/icon type">
+    <link rel="icon" href="Images/logohat.jpeg" type="image/icon type">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -33,6 +33,7 @@ $result = mysqli_query($con,$sql);
     
     <!--CSS Style-->
     <link rel = "stylesheet" href = "announcement.css">
+    
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -85,7 +86,7 @@ $result = mysqli_query($con,$sql);
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <img src="logo.jpeg" style="height:100%;width:100px;float:left;margin-left:450px">
+          <img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px">
           </li>
         </ul>
       </div>

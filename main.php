@@ -12,7 +12,7 @@ else{
 <html lang="en">
 <head>
   <title>Uniclub | Home</title>
-  <link rel="icon" href="images/logo.jpeg" type="image/icon type">
+  <link rel="icon" href="Images/logohat.jpeg" type="image/icon type">
   <meta charset="utf-8">
   <link rel="stylesheet" href="stylecards.css">
   <link rel="stylesheet" href="stylemain.css">
@@ -61,7 +61,7 @@ else{
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <img src="logo.jpeg" style="height:100%;width:100px;float:left;margin-left:450px">
+            <img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px">
           </li>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="icon" href="images/logo.jpeg" type="image/icon type"></head>
+<head><link rel="icon" href="images/logohat.jpeg" type="image/icon type"></head>
 <?php
 session_start();
 if(isset($_SESSION['login']) == 2)

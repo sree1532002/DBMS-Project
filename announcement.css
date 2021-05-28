@@ -1,12 +1,23 @@
  body {
     width: 100%;
     overflow-x: hidden;
+    position : absolute;
+ 
+    padding :0px!important;
   }
 
   .menu {
     padding: 30px 20px;
     background-color: rgb(255, 255, 255);
   }
+  #p.align-right ul li{
+    position: relative;
+    float: right;
+}
+#alignnav{
+  position:fixed;
+}
+
   #item:link, #item:visited {
        
     color: #0c0c0c;
@@ -23,7 +34,7 @@
   #item:hover, #item:active {
     background-color: #b8b5ff;
     color: #7868e6;
-    padding: 14px 25px;
+    padding: 14px 14px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

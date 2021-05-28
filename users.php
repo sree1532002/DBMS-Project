@@ -51,7 +51,7 @@ if(isset($_SESSION['login']) == 2)
       <td><?php echo $row['email'];?></td>
       <td><?php echo $row['phone'];?></td>
       <td><?php if($row['accepted_status']==1){
-                    echo "<button class=\"btn btn-success\" onclick=\"change(" . $row['roll_no'] .", ".$row['club_id'].",".$row['accepted_status']." )\" >";
+                    echo "<button class=\"btn btn-success\"   onclick=\"change(" . $row['roll_no'] .", ".$row['club_id'].",".$row['accepted_status']." )\" >";
                     echo "Yes";
                 }else{
                     echo "<button class=\"btn btn-danger\" onclick=\"change(" . $row['roll_no'] .", ".$row['club_id'].",".$row['accepted_status']." )\" >";
@@ -68,6 +68,7 @@ if(isset($_SESSION['login']) == 2)
     ?>
   </tbody>
 </table>
+
 </body>
 </html>
 <?php } 
@@ -79,6 +80,8 @@ else{
 }?>
 <script>
 function change(roll_no,club_id,accepted_status){
+ 
+  
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if(this.readyState == 4 && this.status){
