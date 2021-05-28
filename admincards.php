@@ -25,7 +25,7 @@
 
 <body class="container-fluid">
     <div class="bg-img" class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#b8b5ff;">
+      <nav class="navbar navbar-expand-sm navbar-light" style="background-color:#b8b5ff;">
       <div id = "p" class="float-child">
         <ul class="nav justify-content-end">
         <li class="nav-item" >
@@ -55,7 +55,7 @@
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px">
+            <span><img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px"></span>
           </li>
         </ul>
       </div>
