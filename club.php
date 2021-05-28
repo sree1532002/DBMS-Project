@@ -140,7 +140,7 @@ else{
           </div>
           <div class = "card-title1">Here are some ideas posted by enthusiastic members</div>
         
-          <div class="card container-fluid ideasd">
+          <div class="card container-fluid ideasd cardbg">
             <ul class="list-group list-group-flush">
             <div class="card-header feature">Featured Ideas</div>
               <?php

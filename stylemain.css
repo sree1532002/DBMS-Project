@@ -42,11 +42,18 @@
       }
       #p.align-right ul li{
           position: relative;
-          float: right;
+          float: left;
       }
       #alignnav{
           position:fixed;
       }
+      #item{
+       
+        margin:10px;
+        border-radius: 10px;
+        font-size: 20px;
+       
+      } 
       
       #item:link, #item:visited {
        
@@ -56,11 +63,7 @@
         text-decoration: none;
         display: inline-block;
       }
-      #item{
-        margin: 10px;
-        border-radius: 10px;
-        font-size: 20px;
-      }
+      
       #item:hover, #item:active {
         background-color: #b8b5ff;
         color: #7868e6;

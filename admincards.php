@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Uniclub | Home</title>
+  <link rel="icon" href="Images/logohat.jpeg" type="image/icon type">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="adminpage.css">
+  
+  <link rel="stylesheet" href="footer.css">
+  <link rel="icon" href="logo.jpeg" type="image/icon type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+</head>
+
+<body class="container-fluid">
+    <div class="bg-img" class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#b8b5ff;">
+      <div id = "p" class="float-child">
+        <ul class="nav justify-content-end">
+        <li class="nav-item" >
+            <a class="nav-link"  id = "item" href="#">Home</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link"  id = "item" href="#about1">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="#clubs">Clubs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="announcements.php">Announcements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="polling/index.php">Polls</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="clubadmin.php">Admin</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" id = "item" href="logout.php">Logout</a>
+          </li>
+          <li class="nav-item">
+            <img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px">
+          </li>
+        </ul>
+      </div>
+      </nav>
+
+      <!--navbar finishes -->
+
+      <!--cards start -->
+      <div class="container-fluid">
+	<div class="row">
+	<div class="col-md-3 col-sm-4">
+	<div class="wrimagecard wrimagecard-topimage">
+          <a href="#">
+          <div class="wrimagecard-topimage_header" style="background-color:rgba(187, 120, 36, 0.1) ">
+            <center><i class="fa fa-area-chart" style="color:#BB7824"></i></center>
+          </div>
+          <div class="wrimagecard-topimage_title">
+            <h4>Charts
+            </h4>
+          </div>
+        </a>
+      </div>
+      </div>
+    <div class="col-md-3 col-sm-4">
+      <div class="wrimagecard wrimagecard-topimage">
+          <a href="#">
+          <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
+            <center><i class = "fa fa-cubes" style="color:#16A085"></i></center>
+          </div>
+          <div class="wrimagecard-topimage_title">
+            <h4>Controls
+            <div class="pull-right badge" id="WrControls"></div></h4>
+          </div>
+        </a>
+      </div>
+</div>
+<div class="col-md-3 col-sm-4">
+      <div class="wrimagecard wrimagecard-topimage">
+          <a href="#">
+          <div class="wrimagecard-topimage_header" style="background-color:  rgba(213, 15, 37, 0.1)">
+            <center><i class="fa fa-pencil-square-o" style="color:#d50f25"> </i></center>
+          </div>
+          <div class="wrimagecard-topimage_title" >
+            <h4>Forms
+            <div class="pull-right badge" id="WrForms"></div>
+            </h4>
+          </div>
+    </div>
+  
+</body>
+</html>
+
+
+
+ 
