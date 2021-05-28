@@ -127,6 +127,8 @@ $result = mysqli_query($con,$sql);
         </div>
       </div>
     </div>
+   </div>
+ </div>
   <?php
   $sql = "SELECT * FROM announcements_info";
   $result = mysqli_query($con,$sql);
@@ -138,7 +140,7 @@ $result = mysqli_query($con,$sql);
   ?>      
 </body>
 </html>
-<?php } 
+<?php include "footer.php"; } 
 else{
   echo "<script>";
   echo "alert('Access Denied');";

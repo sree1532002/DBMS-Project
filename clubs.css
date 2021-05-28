@@ -1,3 +1,10 @@
+body{
+    position : absolute;
+ 
+    padding :0px!important;
+}
+
+
 .welcome {
     text-align: center;
     font-size: 45px;
@@ -14,7 +21,9 @@ font-size: x-large;
 #p.align-right ul li{
     position: relative;
     float: right;
-}
+} 
+
+
 #alignnav{
     position:fixed;
 }
@@ -34,7 +43,7 @@ font-size: x-large;
 #item:hover, #item:active {
     background-color: #b8b5ff;
     color: #6651f0;
-    padding: 14px 25px;
+    padding: 14px 14px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

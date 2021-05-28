@@ -57,6 +57,7 @@ else{
 
     <!--CSS Style-->
     <link rel = "stylesheet" href = "clubs.css">
+    
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
