@@ -120,7 +120,7 @@ else{
   <div class="card">
     <img class="card-img-top" src="Images/cultural.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Cultural Club</h5>
+      <h5 class="card-title">Music Club</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       <form action = "club.php" method = "post">
       <input type = "hidden" name = "club" value = "4">

@@ -172,13 +172,8 @@ $rollno = $_SESSION['rollno'];
     </div>
   </div>
 </div>
-<<<<<<< HEAD
 <button class="create-poll" onclick = "loadchat()">Chat</button>
 <iframe name="iFrameName" height = "600px" width = "100%"></iframe>
-=======
-</div>
-</div>
->>>>>>> a97a9a3446b31c7618fc9c5c53064657f9957f23
 </html>
 <?php }
 else{
@@ -187,7 +182,6 @@ else{
   echo "window.location.href = 'index.php';";
   echo "</script>";
 }?>
-<<<<<<< HEAD
 <script>
 function loadchat(){
     var source = "chat.php";
@@ -195,9 +189,6 @@ function loadchat(){
     document.getElementsByName('iFrameName')[0].src = source;
 }
 </script>
-=======
-<?php include "footer.php"?>
->>>>>>> a97a9a3446b31c7618fc9c5c53064657f9957f23
 
 
 
