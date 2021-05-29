@@ -155,14 +155,14 @@ $rollno = $_SESSION['rollno'];
       </div>
       <div class="modal-body">
       <form action = "addclub.php" method="post" enctype="multipart/form-data">
-              <input type = "text" placeholder = "Club ID" name = "clubid"><br>
-              <input type = "text" placeholder = "Club name" name = "clubname"><br>
-              <input type = "text" placeholder = "President Roll number" name = "president"><br>
-              <input type = "text" placeholder = "Incharge name" name = "incharge"><br>
-              <input type = "text" placeholder = "Contact number" name = "contact"><br>
-              <input type = "text" placeholder = "Heading" name = "heading"><br>
-              <input type = "text" placeholder = "Description" name = "description"><br>
-              <input type = "file" id = "image" name = "image">   
+              <input type = "text" class = "form-control" placeholder = "Club ID" name = "clubid"><br>
+              <input type = "text" class = "form-control" placeholder = "Club name" name = "clubname"><br>
+              <input type = "text" class = "form-control" placeholder = "President Roll number" name = "president"><br>
+              <input type = "text" class = "form-control" placeholder = "Incharge name" name = "incharge"><br>
+              <input type = "text" class = "form-control" placeholder = "Contact number" name = "contact"><br>
+              <input type = "text" class = "form-control" placeholder = "Heading" name = "heading"><br>
+              <input type = "text" class = "form-control" placeholder = "Description" name = "description"><br>
+              <input type = "file" class = "form-control" id = "image" name = "image">   
       </div>
       <div class="modal-footer">
       <input type="submit" class="btn btn-success" value = "Add">

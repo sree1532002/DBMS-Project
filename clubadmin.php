@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head><link rel="icon" href="images/logohat.jpeg" type="image/icon type"></head>
 <?php
 session_start();
 if(isset($_SESSION['login']) == 2)
@@ -8,6 +7,9 @@ if(isset($_SESSION['login']) == 2)
     include "db.php";
     $club = $_SESSION['club'];
     $login = $_SESSION['login'];
+    $rollno = $_SESSION['rollno'];
+    $query = "SELECT * FROM chat";
+    $result0 = mysqli_query($con,$query);
     if($_SESSION['login'] == 2){
       $admin = 1;
     }
@@ -19,19 +21,26 @@ if(isset($_SESSION['login']) == 2)
 ?>
 <head>
 <!-- Required meta tags -->
+<link rel="icon" href="Images/logohat.jpeg" type="image/icon type">
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="Images/logohat.jpeg" type="image/icon type">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
     <!--CSS Style-->
     <link rel = "stylesheet" href = "announcement.css">
     
@@ -100,7 +109,7 @@ if(isset($_SESSION['login']) == 2)
     <h1 style ="text-align:center;margin-top:50px;">Announcements</h1>
     <div class="container">
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add announcement</button>
-
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#chat">Chat</button>
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -205,22 +214,39 @@ if(isset($_SESSION['login']) == 2)
   </tbody>
 </table>
   </div>
-  
-</body>
-</html>
-<?php
-mysqli_close($con);
-include "footer.php";
-}
-else
-{
-    echo "<script>";
-    echo "alert('Access denied');";
-    echo "window.location.href='main.php';";
-    echo "</script>";
 
-}?>
+<!-- Button trigger modal -->
 
+<div class="modal fade bd-example-modal-lg" id="chat" tabindex="-1" role="dialog" aria-labelledby="chat" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Chat</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id = "m1">
+      <?php
+      while($row = mysqli_fetch_assoc($result0)){
+      ?>
+    <ul>
+    <?php echo $row['roll_no']." || ";?><?php echo $row['dt']." || ";?><?php echo $row['message'];?>
+    </ul>
+    <?php } ?>
+    </div>
+    <div id="result">
+   
+  </div>
+      <div class="modal-footer">
+      <form id = "send">
+        <textarea name="message" id = "message" rows="4" cols="60" required></textarea>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" value="Send">
+        </form>
+      </div>
+  </div>
+</div>
 <script>
 function update(id){
     var club_id = $("#club_id"+id).val();
@@ -288,7 +314,34 @@ function add(){
     });
     location.reload();
 }
+$(document).ready(function(){
+    $("#send").submit(function(event){
+      event.preventDefault();
+      var formValues = $(this).serialize();
+      var message = $("#message").val();
+      $.post("send.php", formValues, function(data){
+          document.getElementById("m1").style.display = "none";
+          $("#result").html(data);
+      });
+  });
+});
+
 </script>
+</body>
+</html>
+<?php
+mysqli_close($con);
+//include "footer.php";
+}
+else
+{
+    echo "<script>";
+    echo "alert('Access denied');";
+    echo "window.location.href='main.php';";
+    echo "</script>";
+
+}?>
+
 
 
 
