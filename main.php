@@ -131,7 +131,8 @@ else{
 </div>
 
 <!-- clubs finishes -->
-
+<button class="create-poll" onclick = "loadchat()">Chat</button>
+<iframe name="iFrameName" height = "200px" width = "100%"></iframe>
 </div>
 <div>
   <p> </p>
@@ -155,6 +156,11 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+function loadchat(){
+    var source = "chat.php";
+    console.log(source);
+    document.getElementsByName('iFrameName')[0].src = source;
 }
 </script>
 <?php include "footer.php"?>
