@@ -45,12 +45,11 @@ $result = mysqli_query($con,$query);?>
     cache: false,
     success: function(data) {
         console.log(data);
+        iframe.contentWindow.location.reload();
     },
     error: function(xhr, status, error) {
     console.error(xhr);
     }
     });
-    location.reload();
-    setTimeout("location.reload(true);", t);
 }
 </script>

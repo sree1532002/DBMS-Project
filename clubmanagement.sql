@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2021 at 01:53 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.28
+-- Generation Time: May 29, 2021 at 07:51 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -71,7 +70,8 @@ INSERT INTO `announcements` (`id`, `club_id`, `events`, `dates`) VALUES
 (10, '0', 'added for testingggg', '2021-05-24 10:55:00'),
 (16, '0', 'Come to tag audi at 9am', '2021-05-14 11:02:00'),
 (18, '3', 'Hello akshuma', '2021-05-20 13:44:00'),
-(19, '2', 'testing views', '2021-04-30 11:40:00');
+(19, '2', 'testing views', '2021-04-30 11:40:00'),
+(20, '2', 'Assemble in front of red building', '2021-05-08 14:21:00');
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,11 @@ INSERT INTO `announcements_info` (`id`, `club_id`, `info`, `description`) VALUES
 (2, '1', 'Images/2019103513_LA_ASSIGNNENT_2.pdf', 'Assignment2'),
 (3, '1', 'Images/2019103513_LA_ASSIGNNENT_2.pdf', 'Assignment3'),
 (4, '1', 'Images/sky-5375005_1920.jpg', 'Nature'),
-(5, '1', 'Images/food-5227740_1920.jpg', 'Food');
+(5, '1', 'Images/food-5227740_1920.jpg', 'Food'),
+(6, '1', 'Images/coffee-841425_1920.jpg', 'Coffee'),
+(7, '1', 'Images/My Card.pdf', 'Card'),
+(8, '1', 'Images/tree-736885_1280.jpg', 'Want some coffee?'),
+(9, '1', 'Images/wheat-8762_1920.jpg', 'Hola');
 
 -- --------------------------------------------------------
 
@@ -108,6 +112,26 @@ CREATE TABLE `ann_display` (
 ,`dates` timestamp
 ,`club_name` varchar(20)
 );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `id` int(11) NOT NULL,
+  `dt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `message` text DEFAULT NULL,
+  `roll_no` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`id`, `dt`, `message`, `roll_no`) VALUES
+(58, '2021-05-29 05:50:31', 'hello', '2017103001');
 
 -- --------------------------------------------------------
 
@@ -130,6 +154,7 @@ CREATE TABLE `clubs` (
 INSERT INTO `clubs` (`club_id`, `club_name`, `president`, `incharge`, `t_contact`) VALUES
 ('0', 'General', '2017103005', 'Bhuvaneshwari', '9876987609'),
 ('1', 'Astro Club', '2017103001', 'Vellammal BL', '9876987667'),
+('11', 'Kesh club', '2017103011', 'Kesh', '9876678999'),
 ('2', 'Computer club', '2017103002', 'Shanmugapriya E', '9876987669'),
 ('3', 'Photography Club', '2017103003', 'Sanju', '8765876545'),
 ('4', 'Cultural Club', '2017103004', 'Suganthini', '9876987661'),
@@ -161,19 +186,20 @@ INSERT INTO `club_layout` (`id`, `club_id`, `heading`, `image`, `description`) V
 (1, '1', 'Welcome to the Astronomy Club!', 'Images/galaxy.jpg', 'Do you love the stars? Are you mesmerized by the universe? Do you feel a strong passion for astronomy? You\'ve come to the right place!'),
 (2, '2', 'Welcome to the Computers Club!', 'Images/computer.jpg', 'Hackathons. All nighters. Coffee and so much more.'),
 (3, '3', 'Welcome to the Photography Club!', 'Images/photo_club.jpg', 'Is photography your passion? Do you see the world through a lens? Welcome, fellow artist!'),
-(4, '4', 'Welcome to the Cultural Club!', 'Images/musicclub.jpg', 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'),
+(4, '4', 'Welcome to the Music Club!', 'Images/musicclub.jpg', 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'),
 (5, '5', 'Welcome to LitCLub!', '60abaaf5d0df80.75262346.png', 'Hola!!'),
 (6, '6', 'Welcome to LitCLub!', '60ababa742a184.72383616.png', 'Hola!!'),
 (7, '7', 'Welcome to MusicCLub!', '60ad29d9480aa4.80404812.png', 'Sweet'),
 (8, '8', 'Welcome to Rotaract Club!', '60af80c04bcc20.13771807.jpg', 'Hello everyone!'),
-(9, '9', 'Welcome', '60af830b9bd563.34589231.jpg', 'Hola');
+(9, '9', 'Welcome', '60af830b9bd563.34589231.jpg', 'Hola'),
+(10, '11', 'Kesh', '60b0f5f3f10130.00015168.jpg', 'K');
 
 --
 -- Triggers `club_layout`
 --
 DELIMITER $$
 CREATE TRIGGER `club_add` BEFORE INSERT ON `club_layout` FOR EACH ROW INSERT INTO clubs(club_id,club_name,incharge,president,t_contact) 
-                    VALUES('9','Leo club','lala','2017103009','4567876534')
+                    VALUES('11','Kesh club','Kesh','2017103011','9876678999')
 $$
 DELIMITER ;
 
@@ -196,13 +222,14 @@ CREATE TABLE `ideas` (
 --
 
 INSERT INTO `ideas` (`id`, `club_id`, `idea`, `roll_no`, `visibility`) VALUES
-(1, '1', 'Moon watch shows can be conducted', '2019103585', 0),
+(1, '1', 'Moon watch shows can be conducted', '2019103585', 1),
 (2, '1', 'Planetorium visit', '2019103585', 0),
 (3, '1', 'Planetorium visit can be conducted', '2019103585', 1),
 (4, '2', 'Website comp', '2019103585', 0),
 (5, '2', 'Website competition', '2019103585', 1),
-(6, '1', 'Moon watch shows can be conducted..........', '2019103585', 1),
-(7, '1', 'Telescope seminar', '2019103040', 1);
+(6, '1', 'Moon watch shows can be conducted..........', '2019103585', 0),
+(7, '1', 'Telescope seminar', '2019103040', 1),
+(9, '1', 'hallo', '2019103585', 0);
 
 -- --------------------------------------------------------
 
@@ -238,21 +265,14 @@ INSERT INTO `login` (`roll_no`, `pword`) VALUES
 ('2019103040', 'kesh'),
 ('2019103040', 'kesh'),
 ('2019103585', 'ratcha'),
-('2019103040', 'kesh');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `members`
---
-
-CREATE TABLE `members` (
-  `club_id` varchar(10) DEFAULT NULL,
-  `roll_no` varchar(10) DEFAULT NULL,
-  `name` varchar(20) DEFAULT NULL,
-  `year` int(11) DEFAULT NULL,
-  `dept` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+('2019103040', 'kesh'),
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
+('2019103585', 'ratcha');
 
 -- --------------------------------------------------------
 
@@ -337,6 +357,12 @@ ALTER TABLE `announcements_info`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `clubs`
 --
 ALTER TABLE `clubs`
@@ -364,13 +390,6 @@ ALTER TABLE `login`
   ADD KEY `roll_no` (`roll_no`);
 
 --
--- Indexes for table `members`
---
-ALTER TABLE `members`
-  ADD KEY `club_id` (`club_id`),
-  ADD KEY `roll_no` (`roll_no`);
-
---
 -- Indexes for table `signup`
 --
 ALTER TABLE `signup`
@@ -392,25 +411,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `announcements_info`
 --
 ALTER TABLE `announcements_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `club_layout`
 --
 ALTER TABLE `club_layout`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `ideas`
 --
 ALTER TABLE `ideas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -452,13 +477,6 @@ ALTER TABLE `ideas`
 --
 ALTER TABLE `login`
   ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`roll_no`) REFERENCES `signup` (`roll_no`);
-
---
--- Constraints for table `members`
---
-ALTER TABLE `members`
-  ADD CONSTRAINT `members_ibfk_1` FOREIGN KEY (`club_id`) REFERENCES `clubs` (`club_id`),
-  ADD CONSTRAINT `members_ibfk_2` FOREIGN KEY (`roll_no`) REFERENCES `signup` (`roll_no`);
 
 --
 -- Constraints for table `users`
