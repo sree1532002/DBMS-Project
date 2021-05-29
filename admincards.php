@@ -68,7 +68,7 @@ $rollno = $_SESSION['rollno'];
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" id = "item" href="clubadmin.php">Admin</a>
+            <a class="nav-link" id = "item" href="admincards.php">Admin</a>
           </li>
          
           <li class="nav-item">

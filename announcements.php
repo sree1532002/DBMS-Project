@@ -122,22 +122,24 @@ $result = mysqli_query($con,$sql);
               <li class  ="list-group-item"><?php echo $row['club_name'].":  ";?><?php echo $row['events']."Timings: ";?><?php echo $row['dates'];?></li>
             
               <?php } ?>
+              <?php
+                $sql = "SELECT * FROM announcements_info";
+                $result = mysqli_query($con,$sql);
+                while($row = mysqli_fetch_assoc($result)){?>
+                  <li class  ="list-group-item"><?php echo $row['description'];?><span style="float:right;"><a href="<?php echo $row['info'];?>">Open</a></span></li>
+                 
+                <?php
+                }
+                ?> 
             </ul>
+              </div>
+
+            
           </div>
         </div>
       </div>
-    </div>
-   </div>
  </div>
-  <?php
-  $sql = "SELECT * FROM announcements_info";
-  $result = mysqli_query($con,$sql);
-  while($row = mysqli_fetch_assoc($result)){?>
-     <p><?php echo $row['description'];?><a href="<?php echo $row['info'];?>">Open</a></p>
-    </iframe>
-  <?php
-  }
-  ?>      
+</div>      
 </body>
 </html>
 <?php include "footer.php"; } 
