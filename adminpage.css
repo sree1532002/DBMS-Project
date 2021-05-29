@@ -2,6 +2,7 @@ body{
     position : absolute;
  
     padding :0px!important;
+   
 }
 #stylehome{
     background-position: center;
@@ -130,4 +131,9 @@ hr {
 }
 .container-fluid {
   padding-top: 22px;
+}
+.addclub:hover{
+
+    text-decoration:underline;
+    border:none;
 }

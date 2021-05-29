@@ -135,7 +135,7 @@ $rollno = $_SESSION['rollno'];
           </div>
           <div class="wrimagecard-topimage_title">
             <h4>
-            <button type="button" style = "background-color:white;border: none;color: black;" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" id= "addclub" style = "background-color:white;border: none;" data-toggle="modal" data-target="#exampleModal">
     Add Club
 </button>
             <div class="pull-right badge" id="WrGridSystem"></div></h4>
@@ -150,7 +150,7 @@ $rollno = $_SESSION['rollno'];
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Club</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close"  data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -173,7 +173,8 @@ $rollno = $_SESSION['rollno'];
     </div>
   </div>
 </div>
-
+</div>
+</div>
 </html>
 <?php }
 else{
@@ -182,6 +183,7 @@ else{
   echo "window.location.href = 'index.php';";
   echo "</script>";
 }?>
+<?php include "footer.php"?>
 
 
 
