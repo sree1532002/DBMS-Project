@@ -172,8 +172,11 @@ $rollno = $_SESSION['rollno'];
     </div>
   </div>
 </div>
+</div>
+
+</div>
 </html>
-<?php }
+<?php include "footer.php";}
 else{
     echo "<script>";
   echo "alert('Access Denied');";
