@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
   <link rel="icon" href="favicon.ico" type="image/icon type">
-  <meta http-equiv="refresh" content="10" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -27,7 +26,7 @@ $result = mysqli_query($con,$query);?>
 </div>
 
 <form>
-<textarea id="message" name="message" rows="4" cols="50">
+<textarea id="message" name="message" rows="4" cols="40">
 </textarea>
 <button class = "btn-btn-info" onclick = "send()">Send</button>
 </form>
