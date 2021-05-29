@@ -48,27 +48,34 @@ body {
 .content {
     width: 1000px;
     margin: 0 auto;
+   
+}
+ .poll-vote{
+    text-align: center;
 }
 .content h2 {
     margin: 0;
-    padding: 25px 0;
+    padding: 10px 0;
     font-size: 22px;
     border-bottom: 1px solid #ebebeb;
     color: #666666;
+    
 }
 .home .create-poll {
     display: inline-block;
     text-decoration: none;
-    background-color: #38b673;
+    background-color: #f7def0;
     font-weight: bold;
     font-size: 14px;
     border-radius: 5px;
-    color: #FFFFFF;
-    padding: 10px 15px;
-    margin: 15px 0;
+    color: black;
+    padding: 10px ;
+    margin-bottom: 30px;
+    border-color: #f7def0;
 }
 .home .create-poll:hover {
-    background-color: #32a367;
+    background-color: #fad0ee;
+    border-color: #f7def0!important;
 }
 .home table {
     width: 100%;
@@ -76,23 +83,26 @@ body {
     border-collapse: collapse;
 }
 .home table thead {
-    background-color: #ebeef1;
+    background-color: #b8b5ff;
     border-bottom: 1px solid #d3dae0;
 }
 .home table thead td {
     padding: 10px;
     font-weight: bold;
-    color: #767779;
+    color: black;
     font-size: 14px;
+    background-color:#b8b5ff!important; 
+   
 }
 .home table tbody tr {
     border-bottom: 1px solid #d3dae0;
+   
 }
 .home table tbody tr:nth-child(even) {
     background-color: #fbfcfc;
 }
 .home table tbody tr:hover {
-    background-color: #b8b5ff;
+    background-color: #dcdee2;
 }
 
 .home table tbody tr:hover td:nth-child(1) {
@@ -190,6 +200,7 @@ body {
 .poll-vote form {
     display: flex;
     flex-flow: column;
+    text-align: center;
 }
 .poll-vote form label {
     padding-bottom: 10px;
@@ -247,4 +258,10 @@ body {
     color: #FFFFFF;
     justify-content: center;
     align-items: center;
+}
+#content{
+    margin-left: 240px!important;
+}
+.frames{
+    text-align: center!important;
 }

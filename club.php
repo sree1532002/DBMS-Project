@@ -123,6 +123,7 @@ else{
         <div class="card-body">
           <h5 class="card-title"><?php echo $row2['heading'];?></h5>
           <p class="card-text"><?php echo $row2['description'];?></p>
+          <?php if($admin == 0){?>
           <div class = "ideas">
             <div class = "card-title1">We believe you've got great ideas, Share em with us.</div>
           </div>
@@ -138,6 +139,7 @@ else{
               </div>
             </form>
           </div>
+          <?php }?>
           <div class = "card-title1">Here are some ideas posted by enthusiastic members</div>
         
           <div class="card container-fluid ideasd cardbg">

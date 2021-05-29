@@ -20,6 +20,11 @@ if(isset($_SESSION['login']) == 2)
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="Images/logohat.jpeg" type="image/icon type">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -31,7 +36,9 @@ if(isset($_SESSION['login']) == 2)
     <title>Uniclub | Members</title>
     
     <!--CSS Style-->
+    <link rel = "stylesheet" href = "admin.css">
     <link rel = "stylesheet" href = "announcement.css">
+    
     
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -51,7 +58,7 @@ if(isset($_SESSION['login']) == 2)
     />
 <title>Uniclub | Club Admin</title>
   </head>
-  <body>
+  <body class="container-fluid">
     <!--navbar -->
 
 
@@ -93,10 +100,12 @@ if(isset($_SESSION['login']) == 2)
       </div>
     </div>
     <!--navbar ends-->
+    <div class="container-fluid feature" >
+  <div class="container-fluid">
 
-
-<div class="container" style = "border-style: groove;border: 3px solid #495d87;margin-bottom:400px;margin-top:100px;">
-  <table class="table table-hover">
+<div  id="content" class="shadow-lg p-3 mb-5 bg-red rounded" style="width:1000px;margin-left:240px;" >
+  <div id = "tablecss" class="container-fluid" >
+  <table class="table" >
   <thead>
   <br>
     <tr>
@@ -105,10 +114,10 @@ if(isset($_SESSION['login']) == 2)
       <th>Name</th>
       <th>Year</th>
       <th>Department</th>
-      <th>Club Id</th>
+      <th>Id</th>
       <th>Email</th>
       <th>Phone</th>
-      <th>Member status</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
@@ -128,10 +137,10 @@ if(isset($_SESSION['login']) == 2)
       <td><?php echo $row['email'];?></td>
       <td><?php echo $row['phone'];?></td>
       <td><?php if($row['accepted_status']==1){
-                    echo "<button class=\"btn btn-success\"   onclick=\"change(" . $row['roll_no'] .", ".$row['club_id'].",".$row['accepted_status']." )\" >";
+                    echo "<button class=\"btn btn1\"   onclick=\"change(" . $row['roll_no'] .", ".$row['club_id'].",".$row['accepted_status']." )\" >";
                     echo "Yes";
                 }else{
-                    echo "<button class=\"btn btn-danger\" onclick=\"change(" . $row['roll_no'] .", ".$row['club_id'].",".$row['accepted_status']." )\" >";
+                    echo "<button class=\"btn btn2\" onclick=\"change(" . $row['roll_no'] .", ".$row['club_id'].",".$row['accepted_status']." )\" >";
                     echo "No";
                 }
             ?></button>
@@ -145,6 +154,8 @@ if(isset($_SESSION['login']) == 2)
     ?>
   </tbody>
 </table>
+  </div>
+  </div>
   </div>
   </div>
 </body>

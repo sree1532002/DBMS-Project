@@ -1,6 +1,9 @@
 <?php
 session_start();
+include "db.php";
 if(isset($_SESSION['login'])){
+  $query = "SELECT * FROM chat";
+  $result0 = mysqli_query($con,$query);
 if($_SESSION['login'] == 2){
   $admin = 1;
 }
@@ -26,6 +29,8 @@ else{
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body class="container-fluid">
@@ -66,6 +71,7 @@ else{
         </ul>
       </div>
       </nav>
+     
       <div class ="uni">Uniclub</div>
     </div>
 
@@ -130,11 +136,67 @@ else{
   </div>
 </div>
 </div>
-<div>
-  <p> </p>
+
+ <!--chat button-->    
+<div class="fixed-btn">
+  <p><button type="button" class="btn" data-toggle="modal" data-target="#chat" style="background-color:#b8b5ff;border:none;postion:sticky;bottom:5px;left:5px;"> Chat    </button></p>
+ </div>
+ <div class="fixed-btn">
+ <p><button type="button" class="btn" data-toggle="modal" data-target="#chat" style="background-color:#b8b5ff;border:none;postion:sticky;bottom:5px;left:5px;"> <i class='far fa-comment-dots icons' style='font-size:48px;color:white;postion:sticky;bottom:5px;left:5px;'></i>   </button></p>
+          </div>
+
+<!--modal-->
+
+<div class="modal fade bd-example-modal-lg" id="chat" tabindex="-1" role="dialog" aria-labelledby="chat" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Chat</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id = "m1">
+      <?php
+      while($row = mysqli_fetch_assoc($result0)){
+      ?>
+    <ul>
+    <?php echo $row['roll_no']." || ";?><?php echo $row['dt']." || ";?><?php echo $row['message'];?>
+    </ul>
+    <?php } ?>
+    </div>
+    <div id="result">
+   
+  </div>
+      <div class="modal-footer">
+      <form id = "send">
+        <textarea name="message" id = "message" rows="4" cols="60" required></textarea>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" value="Send">
+        </form>
+      </div>
+  </div>
 </div>
+ </div>
+</div>
+<!--end modal-->
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script>
+
+
+$(document).ready(function(){
+    $("#send").submit(function(event){
+      event.preventDefault();
+      var formValues = $(this).serialize();
+      var message = $("#message").val();
+      $.post("send.php", formValues, function(data){
+          document.getElementById("m1").style.display = "none";
+          $("#result").html(data);
+      });
+  });
+});
+
+
 var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button

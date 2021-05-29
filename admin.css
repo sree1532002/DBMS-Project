@@ -1,14 +1,23 @@
-body{
-    background-image: url("Images/adminpic3.jpg");
+.feature{
+    background-image: url("Images/adminpic5.jpg");
 
     background-size: cover;
     background-repeat: no-repeat; 
-    height: 100%;
-    width: 100%;
+   margin-top:0px!important;
+    height: 500px;
+    width: 600px;
+    padding-top: 100px!important;
 }
 #content{
-    border-style: groove;
-    border: 3px solid #495d87;
-    margin:50px 350px;
-    background-color: #faf3f3;
+    
+    margin:0px 350px;
+    
+    background-color: #ffffff;
+}
+
+.btn1{
+   background-color: #dbd9ff!important;
+}
+.btn2{
+    background-color: #f7def0!important;
 }

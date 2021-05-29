@@ -16,6 +16,10 @@ $i = 1;?>
   <link rel="stylesheet" href="../stylecards.css">
   <link rel="stylesheet" href="../stylemain.css">
   <link rel="stylesheet" href="../footer.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../admin.css">
+  
+
   <link rel="icon" href="..logo.jpeg" type="image/icon type">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -64,7 +68,12 @@ $i = 1;?>
         </ul>
       </div>
       </nav>
-<div class="content home">
+  <div class="container-fluid feature" >
+  <div class="container-fluid">
+
+<div  id="content" class="content home shadow-lg p-3 mb-5 bg-red rounded" >
+  
+
 <?php if($login == 2){?>
     <h2>Polls created</h2>
             <?php } ?>
@@ -88,19 +97,24 @@ $i = 1;?>
                 <td><?=$poll['title']?></td>
 				<td><?=$poll['answers']?></td>
                 <td class="actions">
-                <div class="fas fa-eye fa-xs" style = "height:30px;width:40px;background-color:#a3f071;border-radius:5px;padding-right:12px;padding-top:10px;" onclick = "loadpoll(<?=$poll['id']?>)"></div>
+                <div class="fas fa-eye fa-xs" style = "height:30px;width:40px;background-color: #f7def0;border-radius:5px;padding-right:12px;padding-top:10px;" onclick = "loadpoll(<?=$poll['id']?>)"></div>
                 <?php if($login == 2){?>
-                <div class="fas fa-trash fa-xs" style = "height:30px;width:40px;background-color:#f22440;border-radius:5px;padding-right:15px;padding-top:10px;" onclick = "del(<?=$poll['id']?>)"></div>
+                <div class="fas fa-trash fa-xs" style = "height:30px;width:40px;background-color:#dbd9ff;border-radius:5px;padding-right:15px;padding-top:10px;" onclick = "del(<?=$poll['id']?>)"></div>
                 <?php } ?> 
                 </td>
             </tr>
             <?php endforeach;?>
         </tbody>
     </table>
+ </div>
 </div>
-<br>
-<iframe name="iFrameName" height = "600px" width = "100%"></iframe>
 
+</div>
+                
+<br>
+<div >
+<iframe name="iFrameName" class="frames" height = "600px" width = "100%"></iframe>
+ </div>                
 </body>
 </html>
 <script>
