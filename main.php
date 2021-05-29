@@ -88,9 +88,9 @@ else{
       <h5 class="card-title">Astro Club</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       <form action = "club.php" method = "post">
-      <a href="club.php" class="btn btn-primary">Go</a>
+      
       <input type = "hidden" name = "club" value = "1">
-     <!-- <button type = "submit" name = "submit"  class="btn btn-primary" >Go</button>-->
+     <button type = "submit" name = "submit"  class="btn btn-primary" >Go</button>
       </form>
     </div>
   </div>
@@ -101,7 +101,7 @@ else{
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       <form action = "club.php" method = "post">
       <input type = "hidden" name = "club" value = "2">
-      <button type = "button" name = "submit" class="correct btn btn-primary" style="background-color:#b8b5ff;border:#b8b5ff;">Go</button>
+      <button type = "submit" name = "submit" class="correct btn btn-primary">Go</button>
       </form>
     </div>
   </div>

@@ -34,6 +34,12 @@
         background-size:cover;
        position: relative;
       }
+      #t{
+        color: #faf3e0;
+        font-size: larger;
+        position: absolute;
+        margin-left: 20px;
+    }
      
       #p.align-right ul li{
           position: relative;
@@ -80,13 +86,8 @@
         border-color: #b8b5ff!important;
        
       }
-      #correct{
-        background-color:  #b8b5ff!important;
-        border-color: #b8b5ff!important;
-      }
-     
       .btn-primary:any-link{
-        background-color: #b8b5ff!important;
+        
         box-shadow: 0 0 0 0.2rem rgba(222, 181, 255, 0.25)!important;
       }
       #image{
@@ -134,7 +135,7 @@
       font-size: 18px;
       border: none;
       outline: none;
-      background-color: #b8b5ff!important;
+      background-color: #b8b5ff;
       color: white;
       cursor: pointer;
       padding: 15px;
