@@ -75,7 +75,7 @@ $rollno = $_SESSION['rollno'];
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-            <span><img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px"></span>
+            <span><img src="Images/logo.png" style="height:95%;width:200px;float:left;margin-left:350px"></span>
           </li>
         </ul>
       </div>

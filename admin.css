@@ -4,14 +4,16 @@
     background-size: cover;
     background-repeat: no-repeat; 
    margin-top:0px!important;
-    height: 500px;
-    width: 600px;
+  //  height: 500px;
+    //width: 600px;
     padding-top: 100px!important;
+   // margin-bottom: 200px!important;
+   height:auto;
 }
 #content{
     
-    margin:0px 350px;
-    
+  margin:0px 300px;
+   
     background-color: #ffffff;
 }
 

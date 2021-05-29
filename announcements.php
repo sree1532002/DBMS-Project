@@ -86,7 +86,7 @@ $result = mysqli_query($con,$sql);
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-          <img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px">
+          <img src="Images/logo.png" style="height:95%;width:200px;float:left;margin-left:350px">
           </li>
         </ul>
       </div>

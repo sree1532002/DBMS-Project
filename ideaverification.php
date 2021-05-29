@@ -95,16 +95,18 @@ if(isset($_SESSION['login'])  == 2)
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
           <li class="nav-item">
-          <img src="Images/logofinal.jpeg" style="height:95%;width:200px;float:left;margin-left:350px">
+          <img src="Images/logo.png" style="height:95%;width:200px;float:left;margin-left:350px">
           </li>
         </ul>
       </div>
+          </nav>
     </div>
+    
     <div class="container-fluid feature" >
-  <div class="container-fluid">
+  
 
 <div  id="content" class="shadow-lg p-3 mb-5 bg-red rounded" >
-  <div id = "tablecss" class="container-fluid" >
+ 
   <table class="table">
   <thead>
   <br>
@@ -149,7 +151,7 @@ if(isset($_SESSION['login'])  == 2)
 </table>
   </div>
   </div>
-</div>
+  </div>
   </div>
 </body>
 </html>
