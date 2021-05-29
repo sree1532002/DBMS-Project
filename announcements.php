@@ -113,7 +113,7 @@ $result = mysqli_query($con,$sql);
             <div class = "subtext">Here's a single destination to get all the announcements regarding your favourite club activities.</div> 
             <div class = "ideas">
           <div class = "card-title">Latest announcements</div>
-          <div class="card container-fluid ideasd">
+          <div class="card container-fluid ideasd cardbg">
             <ul class="list-group list-group-flush">
             <div class="card-header feature">Important</div>
               <?php
