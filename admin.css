@@ -1,0 +1,14 @@
+body{
+    background-image: url("Images/adminpic3.jpg");
+
+    background-size: cover;
+    background-repeat: no-repeat; 
+    height: 100%;
+    width: 100%;
+}
+#content{
+    border-style: groove;
+    border: 3px solid #495d87;
+    margin:50px 350px;
+    background-color: #faf3f3;
+}
