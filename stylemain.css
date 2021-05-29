@@ -74,13 +74,21 @@
         color: #faf3e0;
         padding:50px;
       }
-      /*.btn-primary {
-        background-color: #b8b5ff!important;
+    .btn-primary{
+        
+        background-color:  #b8b5ff!important;
+        border-color: #b8b5ff!important;
+       
+      }
+      #correct{
+        background-color:  #b8b5ff!important;
         border-color: #b8b5ff!important;
       }
+     
       .btn-primary:any-link{
+        background-color: #b8b5ff!important;
         box-shadow: 0 0 0 0.2rem rgba(222, 181, 255, 0.25)!important;
-      }*/
+      }
       #image{
         height:100px;
         width:100px;
@@ -126,7 +134,7 @@
       font-size: 18px;
       border: none;
       outline: none;
-      background-color: #b8b5ff;
+      background-color: #b8b5ff!important;
       color: white;
       cursor: pointer;
       padding: 15px;
@@ -149,6 +157,7 @@
     .card{
 
       padding: 20px;
-      
+     
 
     }
+   
