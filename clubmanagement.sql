@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2021 at 07:51 AM
+-- Generation Time: May 30, 2021 at 08:43 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -65,13 +65,14 @@ INSERT INTO `announcements` (`id`, `club_id`, `events`, `dates`) VALUES
 (2, '1', 'Assemble at vivek audi ', '2021-05-21 10:30:00'),
 (3, '0', 'Come to tag audi at 3pm(all CS students)', '2021-05-22 04:30:00'),
 (5, '0', 'DBMS Project review at turing hall', '2021-05-21 09:17:00'),
-(6, '2', 'Come to tag audi at 3pm', '2021-05-06 10:52:00'),
+(6, '3', 'Come to tag audi at 3pm', '2021-05-06 10:52:00'),
 (9, '0', 'Assemble at vivek audiiiii', '2021-05-24 10:53:00'),
 (10, '0', 'added for testingggg', '2021-05-24 10:55:00'),
 (16, '0', 'Come to tag audi at 9am', '2021-05-14 11:02:00'),
 (18, '3', 'Hello akshuma', '2021-05-20 13:44:00'),
-(19, '2', 'testing views', '2021-04-30 11:40:00'),
-(20, '2', 'Assemble in front of red building', '2021-05-08 14:21:00');
+(20, '2', 'Assemble in front of red building', '2021-05-08 14:21:00'),
+(21, '0', 'added for testingggg', '2021-05-06 10:58:00'),
+(22, '0', 'added for testingggg', '2021-05-12 11:16:00');
 
 -- --------------------------------------------------------
 
@@ -99,7 +100,9 @@ INSERT INTO `announcements_info` (`id`, `club_id`, `info`, `description`) VALUES
 (6, '1', 'Images/coffee-841425_1920.jpg', 'Coffee'),
 (7, '1', 'Images/My Card.pdf', 'Card'),
 (8, '1', 'Images/tree-736885_1280.jpg', 'Want some coffee?'),
-(9, '1', 'Images/wheat-8762_1920.jpg', 'Hola');
+(9, '1', 'Images/wheat-8762_1920.jpg', 'Hola'),
+(10, '2', 'Images/sky-5375005_1920.jpg', 'Hola'),
+(11, '2', 'Images/caramel-1868802_1920.jpg', 'Hola');
 
 -- --------------------------------------------------------
 
@@ -131,7 +134,25 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`id`, `dt`, `message`, `roll_no`) VALUES
-(58, '2021-05-29 05:50:31', 'hello', '2017103001');
+(174, '2021-05-30 05:34:41', 'Welcome to uniclub.', '2017103001'),
+(175, '2021-05-30 05:34:59', 'we will have a meeting at 5 pm in turning hall.', '2017103001'),
+(176, '2021-05-30 05:35:16', 'Thanks for joining the club. ', '2017103001'),
+(177, '2021-05-30 05:35:26', 'please acknowledge', '2017103001'),
+(178, '2021-05-30 05:36:08', 'hello guys good evening', '2017103001'),
+(179, '2021-05-30 05:39:12', 'hello everyone', '2017103001'),
+(180, '2021-05-30 05:40:14', 'Meeting at 5 pm link will be shared soon', '2017103001'),
+(181, '2021-05-30 05:40:22', 'Please join in time', '2017103001'),
+(182, '2021-05-30 05:40:34', 'If any issue let us know before', '2017103001'),
+(183, '2021-05-30 05:42:42', 'hello guys welcome to club2', '2017103002'),
+(184, '2021-05-30 05:57:26', 'sending the package', '2017103002'),
+(185, '2021-05-30 05:58:02', 'send the list of students', '2017103002'),
+(186, '2021-05-30 05:59:45', 'Hey guys welcome u all to uniclub', '2017103001'),
+(187, '2021-05-30 06:04:24', 'hello allll', '2017103001'),
+(189, '2021-05-30 06:12:40', 'Everyone has to attend the meet', '2017103001'),
+(190, '2021-05-30 06:15:05', 'Yeah sure @2017103001', '2017103001'),
+(191, '2021-05-30 06:31:16', 'Okay we will attend without fail', '2017103001'),
+(192, '2021-05-30 06:31:26', 'Sure seniors.........', '2017103001'),
+(193, '2021-05-30 06:41:35', 'Welcome everyone😎', '2017103001');
 
 -- --------------------------------------------------------
 
@@ -155,6 +176,7 @@ INSERT INTO `clubs` (`club_id`, `club_name`, `president`, `incharge`, `t_contact
 ('0', 'General', '2017103005', 'Bhuvaneshwari', '9876987609'),
 ('1', 'Astro Club', '2017103001', 'Vellammal BL', '9876987667'),
 ('11', 'Kesh club', '2017103011', 'Kesh', '9876678999'),
+('12', 'Leo club', '2017103000', 'lala', '9876678904'),
 ('2', 'Computer club', '2017103002', 'Shanmugapriya E', '9876987669'),
 ('3', 'Photography Club', '2017103003', 'Sanju', '8765876545'),
 ('4', 'Cultural Club', '2017103004', 'Suganthini', '9876987661'),
@@ -192,14 +214,15 @@ INSERT INTO `club_layout` (`id`, `club_id`, `heading`, `image`, `description`) V
 (7, '7', 'Welcome to MusicCLub!', '60ad29d9480aa4.80404812.png', 'Sweet'),
 (8, '8', 'Welcome to Rotaract Club!', '60af80c04bcc20.13771807.jpg', 'Hello everyone!'),
 (9, '9', 'Welcome', '60af830b9bd563.34589231.jpg', 'Hola'),
-(10, '11', 'Kesh', '60b0f5f3f10130.00015168.jpg', 'K');
+(10, '11', 'Kesh', '60b0f5f3f10130.00015168.jpg', 'K'),
+(11, '12', 'Welcome', '60b20cf43f7597.89450107.jpg', 'Hola');
 
 --
 -- Triggers `club_layout`
 --
 DELIMITER $$
 CREATE TRIGGER `club_add` BEFORE INSERT ON `club_layout` FOR EACH ROW INSERT INTO clubs(club_id,club_name,incharge,president,t_contact) 
-                    VALUES('11','Kesh club','Kesh','2017103011','9876678999')
+                    VALUES('12','Leo club','lala','2017103000','9876678904')
 $$
 DELIMITER ;
 
@@ -229,7 +252,8 @@ INSERT INTO `ideas` (`id`, `club_id`, `idea`, `roll_no`, `visibility`) VALUES
 (5, '2', 'Website competition', '2019103585', 1),
 (6, '1', 'Moon watch shows can be conducted..........', '2019103585', 0),
 (7, '1', 'Telescope seminar', '2019103040', 1),
-(9, '1', 'hallo', '2019103585', 0);
+(9, '1', 'hallo', '2019103585', 0),
+(10, '1', 'Moon watch shows can be conducted', '2019103585', 1);
 
 -- --------------------------------------------------------
 
@@ -272,7 +296,87 @@ INSERT INTO `login` (`roll_no`, `pword`) VALUES
 ('2019103585', 'ratcha'),
 ('2019103585', 'ratcha'),
 ('2019103585', 'ratcha'),
+('2019103585', 'ratcha'),
 ('2019103585', 'ratcha');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `polling_over`
+--
+
+CREATE TABLE `polling_over` (
+  `id` int(11) NOT NULL,
+  `poll_id` int(11) NOT NULL,
+  `roll_no` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `polling_over`
+--
+
+INSERT INTO `polling_over` (`id`, `poll_id`, `roll_no`) VALUES
+(1, 12, '2017103001'),
+(2, 11, '2017103001'),
+(3, 13, '2017103001'),
+(4, 13, '2019103585'),
+(5, 11, '2019103585'),
+(6, 14, '2017103001'),
+(7, 15, '2017103001'),
+(8, 16, '2017103001');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `polls`
+--
+
+CREATE TABLE `polls` (
+  `id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `polls`
+--
+
+INSERT INTO `polls` (`id`, `title`, `desc`) VALUES
+(11, 'Favourite subject', 'Choose your favourite subject'),
+(15, 'Favourite subject', 'Choose your favourite subject');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `poll_answers`
+--
+
+CREATE TABLE `poll_answers` (
+  `id` int(11) NOT NULL,
+  `poll_id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `votes` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `poll_answers`
+--
+
+INSERT INTO `poll_answers` (`id`, `poll_id`, `title`, `votes`) VALUES
+(26, 11, 'DBMS', 3),
+(27, 11, 'DSA ', 2),
+(28, 11, 'OS', 4),
+(29, 11, 'CA', 2),
+(30, 12, 'Yes', 1),
+(31, 12, 'No', 0),
+(32, 13, 'Test1', 1),
+(33, 13, 'Test2', 1),
+(34, 14, 'Yes', 0),
+(35, 14, 'No', 1),
+(36, 15, 'OS', 0),
+(37, 15, 'CA', 1),
+(38, 16, 'Ch1', 0),
+(39, 16, 'Ch2', 1);
 
 -- --------------------------------------------------------
 
@@ -390,6 +494,24 @@ ALTER TABLE `login`
   ADD KEY `roll_no` (`roll_no`);
 
 --
+-- Indexes for table `polling_over`
+--
+ALTER TABLE `polling_over`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `polls`
+--
+ALTER TABLE `polls`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `poll_answers`
+--
+ALTER TABLE `poll_answers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `signup`
 --
 ALTER TABLE `signup`
@@ -411,31 +533,49 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `announcements_info`
 --
 ALTER TABLE `announcements_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 
 --
 -- AUTO_INCREMENT for table `club_layout`
 --
 ALTER TABLE `club_layout`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `ideas`
 --
 ALTER TABLE `ideas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `polling_over`
+--
+ALTER TABLE `polling_over`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `polls`
+--
+ALTER TABLE `polls`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `poll_answers`
+--
+ALTER TABLE `poll_answers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -2,6 +2,7 @@
 session_start();
 include "db.php";
 if(isset($_SESSION['login'])){
+  $roll = $_SESSION['rollno'];
   $query = "SELECT * FROM chat";
   $result0 = mysqli_query($con,$query);
 if($_SESSION['login'] == 2){
@@ -156,23 +157,30 @@ else{
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" id = "m1">
+      <div class="modal-body" id = "m1" style = "background-image: url('Images/chatbg5.jpeg');">
       <?php
+      $i = 0;
       while($row = mysqli_fetch_assoc($result0)){
-      ?>
-    <ul>
-    <?php echo $row['roll_no']." || ";?><?php echo $row['dt']." || ";?><?php echo $row['message'];?>
-    </ul>
-    <?php } ?>
+    if($i % 2 == 0){?>
+    <span style = "background-color:#b8b5ff;border-radius:8px;padding:10px;float:left;margin:20px 10px;">
+    <?php echo $row['roll_no'].":";?><?php echo $row['message'];?><br>
+    <i style = "font-size:10px;margin:7px;"><?php echo $row['dt'];?></i></span><?php }
+    else{?>
+      <span style = "background-color:#f9dfdc;border-radius:8px;padding:8px;float:right;margin:20px 10px;">
+    <?php echo $row['roll_no'].":";?><?php echo $row['message'];?><br>
+    <i style = "font-size:10px;margin:7px;"><?php echo $row['dt'];?></i></span>
+    <?php }
+      $i++;
+    }?>
     </div>
-    <div id="result">
-   
+    <div id="result" style = "background-image: url('Images/chatbg5.jpeg');">
+
   </div>
       <div class="modal-footer">
       <form id = "send">
         <textarea name="message" id = "message" rows="4" cols="60" required></textarea>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <input type="submit" value="Send">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </form>
       </div>
   </div>
