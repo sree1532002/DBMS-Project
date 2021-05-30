@@ -117,9 +117,11 @@ $i = 1;?>
 <div class="continer-fluid feature">
 
  
-<div  id="content" class="shadow-lg p-3 mb-5 bg-red rounded" >
-<iframe name="iFrameName" class="frames" height = "500px" width="100%" ></iframe>
-                           
+<div  id="content" class="content home shadow-lg p-3 mb-5 bg-red rounded" >
+  <div>
+<iframe name="iFrameName"  height = "500px" width="100%" ></iframe>
+ </div>
+ </div>                         
 </div>
  </div> 
                 </div>               
