@@ -18,7 +18,7 @@ $i = 1;?>
   <link rel="stylesheet" href="../footer.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../admin.css">
-  
+  <link rel="stylesheet" href="../adminpage.css">
 
   <link rel="icon" href="..logo.jpeg" type="image/icon type">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,7 +69,7 @@ $i = 1;?>
       </div>
       </nav>
   <div class="container-fluid feature" >
-  <div class="container-fluid">
+ 
 
 <div  id="content" class="content home shadow-lg p-3 mb-5 bg-red rounded" >
   
@@ -106,14 +106,21 @@ $i = 1;?>
             <?php endforeach;?>
         </tbody>
     </table>
- </div>
+
 </div>
 
 </div>
                 
 <br>
-<div >
-<iframe name="iFrameName" class="frames" height = "600px" width = "100%"></iframe>
+
+<!--frames-->
+<div class="continer-fluid feature">
+<div class="iframe-container">
+ 
+<div  id="content" class="content home shadow-lg p-3 mb-5 bg-red rounded" >
+<iframe name="iFrameName" class="frames" height = "500px" width = "100%"></iframe>
+               
+</div>
  </div>                
 </body>
 </html>

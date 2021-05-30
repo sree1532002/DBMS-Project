@@ -4,11 +4,10 @@
     background-size: cover;
     background-repeat: no-repeat; 
    margin-top:0px!important;
-  //  height: 500px;
-    //width: 600px;
+ 
     padding-top: 100px!important;
-   // margin-bottom: 200px!important;
-   height:auto;
+ 
+   height:100%;
 }
 #content{
     

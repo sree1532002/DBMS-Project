@@ -33,17 +33,19 @@ if(isset($_SESSION['login']) == 2)
   
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+ 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
     <!--CSS Style-->
     <link rel = "stylesheet" href = "announcement.css">
-    
+    <link rel = "stylesheet" href = "admin.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -62,10 +64,10 @@ if(isset($_SESSION['login']) == 2)
     />
 <title>Uniclub | Club Admin</title>
 </head>
-<body>
+<body >
   <!--navbar-->
 
-  <div class="bg-img" class="container-fluid">
+  
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#b8b5ff;">
       <div id = "p" class="float-child">
         <ul class="nav justify-content-end">
@@ -101,27 +103,64 @@ if(isset($_SESSION['login']) == 2)
           </li>
         </ul>
       </div>
-    </div>
+     
+          </nav>
+          
 
   <!--navbar ends-->
 
-
-    <h1 style ="text-align:center">Announcements</h1>
-    <div class="container">
+  <div class="feature">
+   
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add announcement</button>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#chat">Chat</button>
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add announcement</h4>
-        </div>
-        <div class="modal-body">
-        <form>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Add document</button>
+    <div  id="content" class="shadow-lg p-3 mb-5 bg-red rounded" >
+    <table class="table table-hover">
+  <thead>
+  <br>
+    <tr>
+    <th>S.No.</th>
+      <th>Club Id</th>
+      <th>Events</th>
+      <th>Dates</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
+  $i = 1;
+    while($row = mysqli_fetch_assoc($result)){
+    ?>
+    <tr>
+    <td><?php echo $i;?></td>
+    <form>
+      <input type = "hidden" id = "id" value = "<?php echo $row['id'];?>">
+      <td><input type = "text" id = "club_id<?php echo $row['id'];?>" value = "<?php echo $row['club_id'];?>"></td>
+      <td><input type = "text" id = "events<?php echo $row['id'];?>" value = "<?php echo $row['events'];?>"></td>
+      <td><input type = "text" id = "dates<?php echo $row['id'];?>" value = "<?php echo $row['dates'];?>"></td>
+      <td><input type="button" class="btn btn1" value = "Update" onclick = "update(<?php echo $row['id'];?>)"></td>
+      <td><input type="button" class="btn btn2 " value = "Delete" onclick = "del(<?php echo $row['id'];?>)"></td>
+    </form>
+    </tr>
+    <?php
+    $i++;
+    }
+    ?>
+  </tbody>
+</table>
+
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalTitle">Add announcements</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form>
               <div class="input-group-append idea">
                 <input type="text" name = "events" class="form-control" id = 'events' placeholder="Enter the announcement" aria-label="Recipient's idea" aria-describedby="basic-addon2" required>
               </div>
@@ -136,19 +175,20 @@ if(isset($_SESSION['login']) == 2)
                    </select>
                    <input type="datetime-local"  class="float-right" id="date" placeholder="Enter date&time of the event" name="date" required>
               </div>
-        </div>
-        <div class="modal-footer">
-          <input type="button" class="btn btn-success" value = "Add" onclick = "add()">
+      </div>
+      <div class="modal-footer">
+      <input type="button" class="btn btn-success" value = "Add" onclick = "add()">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
           </form>
-        </div>
       </div>
-      
     </div>
   </div>
 </div>
 
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Add document</button>
+<!--modal 1 ends-->
+
+ 
+
 
 
 <div class="modal fade" id="myModal2" role="dialog">
@@ -177,73 +217,12 @@ if(isset($_SESSION['login']) == 2)
   </div>
 </div>
 
-<div class="container" style = "border-style: groove;border: 3px solid #495d87;">
-  <table class="table table-hover">
-  <thead>
-  <br>
-    <tr>
-    <th>S.No.</th>
-      <th>Club Id</th>
-      <th>Events</th>
-      <th>Dates</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-  $i = 1;
-    while($row = mysqli_fetch_assoc($result)){
-    ?>
-    <tr>
-    <td><?php echo $i;?></td>
-    <form>
-      <input type = "hidden" id = "id" value = "<?php echo $row['id'];?>">
-      <td><input type = "text" id = "club_id<?php echo $row['id'];?>" value = "<?php echo $row['club_id'];?>"></td>
-      <td><input type = "text" id = "events<?php echo $row['id'];?>" value = "<?php echo $row['events'];?>"></td>
-      <td><input type = "text" id = "dates<?php echo $row['id'];?>" value = "<?php echo $row['dates'];?>"></td>
-      <td><input type="button" class="btn btn-primary" value = "Update" onclick = "update(<?php echo $row['id'];?>)"></td>
-      <td><input type="button" class="btn btn-danger" value = "Delete" onclick = "del(<?php echo $row['id'];?>)"></td>
-    </form>
-    </tr>
-    <?php
-    $i++;
-    }
-    ?>
-  </tbody>
-</table>
-  </div>
 
-<!-- Button trigger modal -->
+ 
+  </div>
+</body>
+</html>
 
-<div class="modal fade bd-example-modal-lg" id="chat" tabindex="-1" role="dialog" aria-labelledby="chat" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Chat</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id = "m1">
-      <?php
-      while($row = mysqli_fetch_assoc($result0)){
-      ?>
-    <ul>
-    <?php echo $row['roll_no']." || ";?><?php echo $row['dt']." || ";?><?php echo $row['message'];?>
-    </ul>
-    <?php } ?>
-    </div>
-    <div id="result">
-   
-  </div>
-      <div class="modal-footer">
-      <form id = "send">
-        <textarea name="message" id = "message" rows="4" cols="60" required></textarea>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <input type="submit" value="Send">
-        </form>
-      </div>
-  </div>
-</div>
 <script>
 function update(id){
     var club_id = $("#club_id"+id).val();
@@ -311,24 +290,12 @@ function add(){
     });
     location.reload();
 }
-$(document).ready(function(){
-    $("#send").submit(function(event){
-      event.preventDefault();
-      var formValues = $(this).serialize();
-      var message = $("#message").val();
-      $.post("send.php", formValues, function(data){
-          document.getElementById("m1").style.display = "none";
-          $("#result").html(data);
-      });
-  });
-});
+
 
 </script>
-</body>
-</html>
 <?php
 mysqli_close($con);
-//include "footer.php";
+include "footer.php";
 }
 else
 {

@@ -94,9 +94,18 @@ if(isset($_SESSION['login'])  == 2)
           <li class="nav-item">
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
+          <?php
+          if($admin == 0){?>
+          <li class="nav-item">
+          <img src="Images/logo.png" style="height:95%;width:200px;float:left;padding-left:700px;">
+          </li>
+          <?php } ?>
+          <?php 
+          if($admin == 1){?>
           <li class="nav-item">
           <img src="Images/logo.png" style="height:95%;width:200px;float:left;margin-left:350px">
           </li>
+          <?php } ?>
         </ul>
       </div>
           </nav>
@@ -104,7 +113,7 @@ if(isset($_SESSION['login'])  == 2)
     
     <div class="container-fluid feature" >
   
-
+<div class="container-fluid">
 <div  id="content" class="shadow-lg p-3 mb-5 bg-red rounded" >
  
   <table class="table">
@@ -149,6 +158,7 @@ if(isset($_SESSION['login'])  == 2)
     ?>
   </tbody>
 </table>
+  </div>
   </div>
   </div>
   </div>

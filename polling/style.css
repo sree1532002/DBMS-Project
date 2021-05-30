@@ -72,10 +72,12 @@ body {
     padding: 10px ;
     margin-bottom: 30px;
     border-color: #f7def0;
+    
 }
 .home .create-poll:hover {
     background-color: #fad0ee;
     border-color: #f7def0!important;
+    
 }
 .home table {
     width: 100%;
@@ -168,7 +170,7 @@ body {
 }
 .update form input[type="submit"] {
     display: block;
-    background-color: #38b673;
+    background-color: #dbd9ff!important;
     border: 0;
     font-weight: bold;
     font-size: 14px;
@@ -179,7 +181,7 @@ body {
     border-radius: 5px;
 }
 .update form input[type="submit"]:hover {
-    background-color: #32a367;
+    background-color:#dbd9ff!important;
 }
 .delete .yesno {
     display: flex;
@@ -187,7 +189,7 @@ body {
 .delete .yesno a {
     display: inline-block;
     text-decoration: none;
-    background-color: #38b673;
+    background-color: #b8b5ff!important;
     font-weight: bold;
     color: #FFFFFF;
     padding: 10px 15px;
@@ -212,7 +214,8 @@ body {
     display: inline-block;
     padding: 8px;
     border-radius: 5px;
-    background-color: #38b673;
+    background-color: #b8b5ff!important;
+
     border: 0;
     font-weight: bold;
     font-size: 14px;
@@ -222,7 +225,7 @@ body {
     margin-top: 15px;
 }
 .poll-vote form input[type="submit"]:hover, .poll-vote form a:hover {
-    background-color: #32a367;
+    background-color: #a19dee!important;
 }
 .poll-vote form a {
     text-align: center;
@@ -236,6 +239,7 @@ body {
 .poll-result .wrapper {
     display: flex;
     flex-flow: column;
+   
 }
 .poll-result .wrapper .poll-question {
     width: 50%;
@@ -244,21 +248,27 @@ body {
 .poll-result .wrapper .poll-question p {
     margin: 0;
     padding: 5px 0;
+    align-items: center;
 }
 .poll-result .wrapper .poll-question p span {
     font-size: 14px;
+    align-items: center;
 }
 .poll-result .wrapper .poll-question .result-bar {
     display: flex;
     height: 25px;
     min-width: 5%;
-    background-color: #38b673;
+    background-color: #e9c3e3;
     border-radius: 5px;
     font-size: 14px;
     color: #FFFFFF;
     justify-content: center;
     align-items: center;
+   
+   
+    
 }
+
 #content{
     margin-left: 240px!important;
 }
