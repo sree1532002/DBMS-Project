@@ -184,4 +184,12 @@
      .fixed-btn:active{
        box-shadow: 0 0;
      }
-     
+     .btn1{
+      background-color: #dbd9ff!important;
+   }
+   .btn2{
+       background-color: #f7def0!important;
+   }
+   .btn3{
+    background-color: #dbd9ff!important;
+}

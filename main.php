@@ -66,9 +66,18 @@ else{
           <li class="nav-item">
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
+          <?php 
+          if($admin == 1){?>
           <li class="nav-item">
             <img src="Images/logo.png" style="height:95%;width:200px;float:left;margin-left:350px">
           </li>
+          <?php } ?>
+          <?php 
+          if($admin == 0){?>
+          <li class="nav-item">
+            <img src="Images/logo.png" style="height:95%;width:200px;float:left;margin-left:450px">
+          </li>
+          <?php } ?>
         </ul>
       </div>
       </nav>
@@ -179,8 +188,8 @@ else{
       <div class="modal-footer">
       <form id = "send">
         <textarea name="message" id = "message" rows="4" cols="60" required></textarea>
-        <input type="submit" value="Send">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class=" btn btn3" value="Send">
+        <button type="button" class="btn  btn3" data-dismiss="modal">Close</button>
         </form>
       </div>
   </div>

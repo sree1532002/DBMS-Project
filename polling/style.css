@@ -59,7 +59,7 @@ body {
     font-size: 22px;
     border-bottom: 1px solid #ebebeb;
     color: #666666;
-    
+    width:100%;
 }
 .home .create-poll {
     display: inline-block;
@@ -274,4 +274,5 @@ body {
 }
 .frames{
     text-align: center!important;
+    width:300px!important;
 }
