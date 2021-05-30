@@ -85,9 +85,18 @@ $result = mysqli_query($con,$sql);
           <li class="nav-item">
             <a class="nav-link" id = "item" href="logout.php">Logout</a>
           </li>
+          <?php 
+          if($admin == 1){?>
           <li class="nav-item">
           <img src="Images/logo.png" style="height:95%;width:200px;float:left;margin-left:350px">
           </li>
+          <?php } ?>
+          <?php 
+          if($admin == 0){?>
+          <li class="nav-item">
+          <img src="Images/logo.png" style="height:95%;width:200px;float:left;margin-left:450px">
+          </li>
+          <?php } ?>
         </ul>
       </div>
     </div>

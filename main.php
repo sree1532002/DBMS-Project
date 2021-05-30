@@ -102,7 +102,9 @@ else{
     <img class="card-img-top" src="Images/space2.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Astro Club</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">We attempt to bring about an interest and awareness in the field of Astronomy.
+
+All along the we have been promoting amateur astronomy through talks, competetions and shows. Astronomy is fun, but it can be even more fun when you do it with other people.</p>
       <form action = "club.php" method = "post">
       
       <input type = "hidden" name = "club" value = "1">
@@ -114,7 +116,7 @@ else{
     <img class="card-img-top" src="Images/tech.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Computers Club</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">With the motto of promoting technology, creativity and innovation, the Computer Club of CEG understands and believes that this fast changing and evolving era is the perfect time to live in and step-up to shape our future by looking at the world as our playground!</p>
       <form action = "club.php" method = "post">
       <input type = "hidden" name = "club" value = "2">
       <button type = "submit" name = "submit" class="correct btn btn-primary">Go</button>
@@ -125,7 +127,7 @@ else{
     <img class="card-img-top" src="Images/photography.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Photography Club</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">Our aim is to offer a platform on which Interested People of CEG can promote their work to a wider audience and to help People pursue Photography as a hobby. We want to promote photography in the campus and bring together like-minded people is the main motive of the club.</p>
       <form action = "club.php" method = "post">
       <input type = "hidden" name = "club" value = "3">
       <button type = "submit" name = "submit" class="btn btn-primary">Go</button>
@@ -137,7 +139,7 @@ else{
     <img class="card-img-top" src="Images/cultural.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Music Club</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text">We are a group of music lovers and enthusiasts. We are one of the most dynamic and happening clubs in the campus. Comprising of a bunch of solid talented musicians and ever hungry music worshipers, the club with its various bands has been enthralling the folks for years.</p>
       <form action = "club.php" method = "post">
       <input type = "hidden" name = "club" value = "4">
       <button type = "submit" name = "submit" class="btn btn-primary">Go</button>

@@ -54,12 +54,16 @@ body {
     text-align: center;
 }
 .content h2 {
-    margin: 0;
+    
     padding: 10px 0;
     font-size: 22px;
     border-bottom: 1px solid #ebebeb;
     color: #666666;
     width:100%;
+    margin:auto;
+    width: 50%;
+    text-align: center;
+    
 }
 .home .create-poll {
     display: inline-block;
@@ -151,12 +155,16 @@ body {
     display: flex;
     flex-flow: column;
     width: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .update form label {
     display: inline-flex;
     width: 100%;
     padding: 10px 0;
     margin-right: 25px;
+    
 }
 .update form input, .update form textarea {
     padding: 10px;
@@ -164,9 +172,12 @@ body {
     margin-right: 25px;
     margin-bottom: 15px;
     border: 1px solid #cccccc;
+   
 }
 .update form textarea {
     height: 200px;
+    align-items: center;
+    
 }
 .update form input[type="submit"] {
     display: block;
@@ -185,6 +196,12 @@ body {
 }
 .delete .yesno {
     display: flex;
+    align-items: center;
+    margin-left:auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    padding-left: 100px;
 }
 .delete .yesno a {
     display: inline-block;
@@ -192,13 +209,17 @@ body {
     background-color: #b8b5ff!important;
     font-weight: bold;
     color: #FFFFFF;
-    padding: 10px 15px;
-    margin: 15px 10px 15px 0;
-    border-radius: 5px;
+    padding: 10px 100px;
+    margin: 15px 10px 15px 0px;
+   
+    border-radius: 5px;  
+    
 }
 .delete .yesno a:hover {
     background-color: #32a367;
+    
 }
+
 .poll-vote form {
     display: flex;
     flex-flow: column;
@@ -236,23 +257,26 @@ body {
 .poll-vote form a:hover {
     background-color: #319ca3;
 }
-.poll-result .wrapper {
+.poll-result .wrapper  {
     display: flex;
     flex-flow: column;
+    margin-left: 20px!important;
+   
    
 }
 .poll-result .wrapper .poll-question {
     width: 50%;
     padding-bottom: 5px;
 }
-.poll-result .wrapper .poll-question p {
+.poll-result .wrapper .poll-question p h2{
     margin: 0;
     padding: 5px 0;
-    align-items: center;
+    
+   
 }
 .poll-result .wrapper .poll-question p span {
     font-size: 14px;
-    align-items: center;
+   
 }
 .poll-result .wrapper .poll-question .result-bar {
     display: flex;
@@ -261,7 +285,7 @@ body {
     background-color: #e9c3e3;
     border-radius: 5px;
     font-size: 14px;
-    color: #FFFFFF;
+    color:black!important;
     justify-content: center;
     align-items: center;
    

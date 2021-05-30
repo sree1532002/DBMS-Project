@@ -20,10 +20,10 @@ if (isset($_GET['id'])) {
     die ('No poll ID specified.');
 }
 echo template_header('Poll Results'); ?>
-<div class="content poll-result"  style="margin:0px 400px;">
-	<h2><?=$poll['title']?></h2>
-	<p><?=$poll['desc']?></p>
-    <div class="wrapper" style="align-items:left;">
+<div class="content poll-result"  >
+	<h2 ><?=$poll['title']?></h2>
+	<p style="padding-left:20px;"><?=$poll['desc']?></p>
+    <div class="wrapper" >
         <?php foreach ($poll_answers as $poll_answer): ?>
         <div class="poll-question">
             <p><?=$poll_answer['title']?> <span>(<?=$poll_answer['votes']?> Votes)</span></p>

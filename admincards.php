@@ -21,6 +21,7 @@ $rollno = $_SESSION['rollno'];
   <link rel="icon" href="Images/logohat.jpeg" type="image/icon type">
   <meta charset="utf-8">
   <link rel="stylesheet" href="adminpage.css">
+  <link rel="stylesheet" href="admin.css">
   
   <link rel="stylesheet" href="footer.css">
   <link rel="icon" href="logohat.jpeg" type="image/icon type">
@@ -165,8 +166,8 @@ $rollno = $_SESSION['rollno'];
               <input type = "file" class = "form-control" id = "image" name = "image">   
       </div>
       <div class="modal-footer">
-      <input type="submit" class="btn btn-success" value = "Add">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      <input type="submit" class="btn btn1" value = "Add">
+          <button type="button" class="btn btn2" data-dismiss="modal">Close</button>
     </form>
       </div>
     </div>

@@ -27,12 +27,12 @@ if (isset($_GET['id'])) {
     die ('No ID specified!');
 }
 echo template_header('Delete'); ?>
-<div class="content delete">
+<div class="content delete" >
 	<h2>Delete Poll <?=$poll['id']?></h2>
     <?php if ($msg): ?>
     <p><?=$msg?></p>
     <?php else: ?>
-	<p>Are you sure you want to delete poll <?=$poll['id']?>?</p>
+	<p style="text-align:center;">Are you sure you want to delete poll <?=$poll['id']?>?</p>
     <div class="yesno">
         <a href="delete.php?id=<?=$poll['id']?>&confirm=yes">Yes</a>
         <a href="delete.php?id=<?=$poll['id']?>&confirm=no">No</a>
