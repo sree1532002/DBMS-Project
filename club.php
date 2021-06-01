@@ -12,15 +12,14 @@ if($_SESSION['login'] == 2){
 else{
   $admin = 0;
 }
-
 $sql = "SELECT idea FROM ideas where club_id = $club AND visibility = 1";
 $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_assoc($result);
 
 $sql1 = "SELECT email FROM signup where roll_no = $rollno";
 $result1 = mysqli_query($con,$sql1);
-$row1 = mysqli_fetch_assoc($result1);
-if($row1 != NULL){
+if($result1 != NULL && $admin == 0){
+  $row1 = mysqli_fetch_assoc($result1);
   $email = $row1['email'];
   $_SESSION['mail'] = $email;
 }

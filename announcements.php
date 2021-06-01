@@ -2,9 +2,9 @@
 session_start();
 if(isset($_SESSION['login'])){
 $login = $_SESSION['login'];
-$club = $_SESSION['club'];
 if($_SESSION['login'] == 2){
   $admin = 1;
+  $club = $_SESSION['club'];
 }
 else{
   $admin = 0;
